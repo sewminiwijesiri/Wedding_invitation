@@ -29,9 +29,9 @@ export default function EventDetails({ weddingData, lang }) {
           </div>
 
           <h3 className={styles.eventTitle}>{evt.title[lang]}</h3>
-          <p className={styles.eventTime}>{evt.time}</p>
-          <h4 className={styles.venueName}>{evt.venue}</h4>
-          <p className={styles.venueAddress}>{evt.address}</p>
+          <p className={styles.eventTime}>{lang === "si" ? (evt.timeSi || evt.time) : evt.time}</p>
+          <h4 className={styles.venueName}>{lang === "si" ? (evt.venueSi || evt.venue) : evt.venue}</h4>
+          <p className={styles.venueAddress}>{lang === "si" ? (evt.addressSi || evt.address) : evt.address}</p>
           <p className={styles.eventNote}>{evt.note[lang]}</p>
 
           <button
@@ -39,7 +39,7 @@ export default function EventDetails({ weddingData, lang }) {
             className="btn-outline-gold"
           >
             <MapPin size={14} />
-            <span>{lang === "es" ? "Ver Ubicación" : "View Location"}</span>
+            <span>{lang === "si" ? "ස්ථානය බලන්න" : "View Location"}</span>
           </button>
         </div>
       ))}
@@ -51,17 +51,17 @@ export default function EventDetails({ weddingData, lang }) {
             <button
               className={styles.closeButton}
               onClick={() => setSelectedEvent(null)}
-              aria-label="Cerrar modal"
+              aria-label={lang === "si" ? "වසන්න" : "Close"}
             >
               <X size={20} />
             </button>
 
-            <h3 className={styles.modalVenueTitle}>{selectedEvent.venue}</h3>
-            <p className={styles.modalVenueAddress}>{selectedEvent.address}</p>
+            <h3 className={styles.modalVenueTitle}>{lang === "si" ? (selectedEvent.venueSi || selectedEvent.venue) : selectedEvent.venue}</h3>
+            <p className={styles.modalVenueAddress}>{lang === "si" ? (selectedEvent.addressSi || selectedEvent.address) : selectedEvent.address}</p>
 
             <div className={styles.mapEmbedFrame}>
               <iframe
-                title={`Mapa ${selectedEvent.venue}`}
+                title={`Map ${selectedEvent.venue}`}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -78,7 +78,7 @@ export default function EventDetails({ weddingData, lang }) {
                 onClick={() => handleCopyAddress(selectedEvent.address)}
               >
                 {copied ? <Check size={14} /> : <MapPin size={14} />}
-                <span>{copied ? (lang === "es" ? "Copiado!" : "Copied!") : (lang === "es" ? "Copiar Dirección" : "Copy Address")}</span>
+                <span>{copied ? (lang === "si" ? "පිටපත් විය!" : "Copied!") : (lang === "si" ? "ලිපිනය පිටපත් කරන්න" : "Copy Address")}</span>
               </button>
 
               <a
@@ -87,7 +87,7 @@ export default function EventDetails({ weddingData, lang }) {
                 rel="noopener noreferrer"
                 className="btn-gold"
               >
-                <span>{lang === "es" ? "Abrir en Maps" : "Open in Maps"}</span>
+                <span>{lang === "si" ? "සිතියම විවෘත කරන්න" : "Open in Maps"}</span>
                 <ExternalLink size={14} />
               </a>
             </div>

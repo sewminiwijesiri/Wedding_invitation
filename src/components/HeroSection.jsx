@@ -15,7 +15,7 @@ export default function HeroSection({ weddingData, lang }) {
         </div>
 
         <p className={styles.invitationTag}>
-          {lang === "es" ? "Nuestra Boda" : "Our Wedding"}
+          {lang === "si" ? "අපගේ මංගල දිනය" : "Our Wedding"}
         </p>
 
         <h1 className={styles.coupleNames}>
@@ -26,7 +26,7 @@ export default function HeroSection({ weddingData, lang }) {
 
         <div className={styles.weddingDatePill}>
           <span>
-            {date.day} · {lang === "es" ? date.month.toUpperCase() : date.monthEn.toUpperCase()} · {date.year}
+            {date.day} · {lang === "si" ? (date.monthSi || date.month).toUpperCase() : date.monthEn.toUpperCase()} · {date.year}
           </span>
         </div>
       </div>
@@ -52,7 +52,7 @@ export default function HeroSection({ weddingData, lang }) {
           "{couple.parentBlessing[lang]}"
         </p>
         <p className={styles.parentNames}>
-          {lang === "es" ? "Con amor de nuestras familias" : "With our families' eternal love"}
+          {lang === "si" ? "දෙපස දෙමාපියන්ගේ ආදරණීය ආශිර්වාදයෙන්" : "With our families' eternal love"}
         </p>
       </div>
     </section>

@@ -7,11 +7,11 @@ export const weddingData = {
     hashtag: "#FernandaAndGustavo2026",
     quote: {
       en: "Two souls with but a single thought, two hearts that beat as one.",
-      es: "Dos almas con un solo pensamiento, dos corazones que laten como uno solo."
+      si: "එක් සිතුවිල්ලකින් බැඳුණු ආත්ම දෙකක්, එකට ගැහෙන හදවත් දෙකක්."
     },
     parentBlessing: {
       en: "With the blessing of God and our beloved parents, we cordially invite you to celebrate our Wedding.",
-      es: "Con la bendición de Dios y de nuestros queridos padres, tenemos el honor de invitarles a nuestra Boda."
+      si: "දෙමාපියන්ගේ ආශිර්වාදයෙන් යුතුව, අපගේ විවාහ මංගල්‍යය වෙනුවෙන් ඔබ සැමට ගෞරවයෙන් ආරාධනා කරමු."
     }
   },
   date: {
@@ -19,14 +19,14 @@ export const weddingData = {
     day: "14",
     month: "November",
     monthEn: "November",
-    monthEs: "Noviembre",
+    monthSi: "නොවැම්බර්",
     year: "2026",
     dayName: "Saturday",
     dayNameEn: "Saturday",
-    dayNameEs: "Sábado",
+    dayNameSi: "සෙනසුරාදා",
     fullDate: {
       en: "Saturday, November 14, 2026",
-      es: "Sábado, 14 de Noviembre de 2026"
+      si: "2026 නොවැම්බර් 14 සෙනසුරාදා"
     }
   },
   music: {
@@ -34,7 +34,7 @@ export const weddingData = {
     artist: "The Wedding Symphony Orchestra",
     subtitle: {
       en: "Play our favorite song",
-      es: "Dale play a nuestra canción"
+      si: "අපගේ ආදර ගීතයට සවන් දෙන්න"
     }
   },
   events: [
@@ -43,16 +43,19 @@ export const weddingData = {
       type: "religious",
       title: {
         en: "Wedding Ceremony",
-        es: "Ceremonia Religiosa"
+        si: "මංගල චාරිත්‍ර හා ආශිර්වාදය"
       },
       time: "4:30 PM",
+      timeSi: "පස්වරු 4:30",
       venue: "St. Francis Cathedral & Gardens",
+      venueSi: "ශාන්ත ෆ්‍රැන්සිස් දේවස්ථානය හා උද්‍යානය",
       address: "140 Rose Garden Avenue, Historic District",
+      addressSi: "අංක 140, රෝස මාවත, ඓතිහාසික නගරය",
       mapQuery: "St Francis Cathedral",
       mapUrl: "https://maps.google.com/?q=St+Francis+Cathedral",
       note: {
         en: "Please arrive 15 minutes before the ceremony commences",
-        es: "Por favor llegar 15 minutos antes de iniciar"
+        si: "කරුණාකර චාරිත්‍ර ආරම්භ වීමට විනාඩි 15කට පෙර පැමිණෙන්න"
       }
     },
     {
@@ -60,71 +63,80 @@ export const weddingData = {
       type: "party",
       title: {
         en: "Reception & Gala Dinner",
-        es: "Recepción y Fiesta"
+        si: "මංගල සාදය සහ රාත්‍රී භෝජන සංග්‍රහය"
       },
       time: "6:00 PM",
+      timeSi: "පස්වරු 6:00",
       venue: "Villa Vendimia & Cascade Terrace",
+      venueSi: "විලා වෙන්ඩිමියා ප්‍රසංග ශාලාව",
       address: "45 Royal Vineyard Way, Golden Valley",
+      addressSi: "අංක 45, රෝයල් විනයාඩ් මාවත, ගෝල්ඩන් වැලි",
       mapQuery: "Villa Vendimia",
       mapUrl: "https://maps.google.com/?q=Villa+Vendimia",
       note: {
         en: "Welcome cocktail followed by dinner, toasts & dancing",
-        es: "Cóctel de bienvenida seguido de la cena y fiesta"
+        si: "පිළිගැනීමේ සංග්‍රහය, රාත්‍රී භෝජනය, සුබපැතුම් සහ ප්‍රීතිමත් නැටුම්"
       }
     }
   ],
   itinerary: [
     {
       time: "4:30 PM",
+      timeSi: "ප.ව. 4:30",
       icon: "church",
-      title: { es: "Ceremonia Religiosa", en: "Wedding Ceremony" },
-      desc: { es: "Encuentro sagrado de amor", en: "Sacred union of love" }
+      title: { en: "Wedding Ceremony", si: "මංගල චාරිත්‍ර" },
+      desc: { en: "Sacred union of love & vows", si: "ආදරයේ සදාතනික එක්වීම හා පොරොන්දු" }
     },
     {
       time: "5:45 PM",
+      timeSi: "ප.ව. 5:45",
       icon: "cocktail",
-      title: { es: "Cóctel de Bienvenida", en: "Welcome Cocktail" },
-      desc: { es: "Champagne, aperitivos y música acústica", en: "Champagne, hors d'oeuvres & acoustic music" }
+      title: { en: "Welcome Cocktail", si: "පිළිගැනීමේ සංග්‍රහය" },
+      desc: { en: "Champagne, hors d'oeuvres & acoustic music", si: "ෂැම්පේන්, රසවත් කෙටි ආහාර හා මියුරු සංගීතය" }
     },
     {
       time: "7:00 PM",
+      timeSi: "ප.ව. 7:00",
       icon: "dance",
-      title: { es: "Entrada & Primer Baile", en: "Grand Entrance & First Dance" },
-      desc: { es: "Brindis con los recién casados", en: "Toast with the newlyweds" }
+      title: { en: "Grand Entrance & First Dance", si: "යුවලගේ ප්‍රවේශය හා පළමු නැටුම" },
+      desc: { en: "Toast with the newlyweds", si: "අභිනව යුවල පිළිගැනීම සහ ප්‍රීතිමත් සුබපැතුම්" }
     },
     {
       time: "8:00 PM",
+      timeSi: "ප.ව. 8:00",
       icon: "dinner",
-      title: { es: "Cena de Gala", en: "Gala Dinner" },
-      desc: { es: "Banquete gourmet de 4 tiempos", en: "Four-course gourmet banquet" }
+      title: { en: "Gala Dinner", si: "රාත්‍රී භෝජන සංග්‍රහය" },
+      desc: { en: "Four-course gourmet banquet", si: "විශේෂිත රසවත් මංගල භෝජන සංග්‍රහය" }
     },
     {
       time: "9:30 PM",
+      timeSi: "ප.ව. 9:30",
       icon: "party",
-      title: { es: "Fiesta y Celebración", en: "Party & Dancing" },
-      desc: { es: "Música en vivo, DJ y barra libre", en: "Live band, DJ and open bar" }
+      title: { en: "Party & Dancing", si: "සංගීතය සහ විනෝදය" },
+      desc: { en: "Live band, DJ and open bar", si: "සජීවී සංගීතය, ඩී.ජේ සහ ප්‍රීතිමත් නර්තනය" }
     },
     {
       time: "2:00 AM",
+      timeSi: "පෙ.ව. 2:00",
       icon: "sparkler",
-      title: { es: "Fin de la Velada", en: "Sparkler Farewell" },
-      desc: { es: "Despedida con destellos de amor", en: "Send-off with sparklers of love" }
+      title: { en: "Sparkler Farewell", si: "ආදරණීය සමුගැනීම" },
+      desc: { en: "Send-off with sparklers of love", si: "දීප්තිමත් ආශිර්වාද මැද සමුගැනීම" }
     }
   ],
   dressCode: {
-    title: { es: "Código de Vestimenta", en: "Dress Code" },
-    type: { es: "Rigurosa Etiqueta / Elegante", en: "Black Tie / Elegant Formal" },
+    title: { en: "Dress Code", si: "ඇඳුම් විලාසිතාව" },
+    type: { en: "Black Tie / Elegant Formal", si: "නිල සහ අලංකාර ඇඳුම් විලාසිතාව" },
     women: {
-      es: "Vestido largo de noche o gala en tonos elegantes.",
-      en: "Floor-length evening gown in elegant shades."
+      en: "Floor-length evening gown or elegant formal attire.",
+      si: "කාන්තාවන් සඳහා සම්ප්‍රදායික ඔසරිය/සාරිය හෝ අලංකාර දිගු ගවුම්."
     },
     men: {
-      es: "Traje formal o smoking con corbata o corbatín.",
-      en: "Formal suit or tuxedo with tie or bow-tie."
+      en: "Formal suit or tuxedo with tie or bow-tie.",
+      si: "පිරිමින් සඳහා සම්පූර්ණ නිල ඇඳුම් කට්ටලය හෝ ජාතික ඇඳුම."
     },
     note: {
-      es: "Agradecemos reservar los tonos blanco y marfil exclusivamente para la novia.",
-      en: "Kindly reserve pure white and ivory exclusively for the bride."
+      en: "Kindly reserve pure white and ivory exclusively for the bride.",
+      si: "සුදු සහ ක්‍රීම් පැහැයන් මනාලිය වෙනුවෙන් වෙන් කර ඇති බව කරුණාවෙන් සලකන්න."
     },
     palette: [
       { name: "Champagne Gold", hex: "#D4AF37", border: "#B5942B" },
@@ -134,63 +146,63 @@ export const weddingData = {
     ]
   },
   giftRegistry: {
-    title: { es: "Sugerencia de Regalo", en: "Gift Registry" },
+    title: { en: "Gift Registry & Wishes", si: "සුබපැතුම් සහ තිළිණ" },
     message: {
-      es: "El mejor regalo es su presencia en este día tan especial. Pero si desean hacernos un detalle o contribuir a nuestra luna de miel, les dejamos las siguientes opciones:",
-      en: "The greatest gift is having you with us on our special day. However, if you wish to honor us with a gift or contribute to our honeymoon, here are the options:"
+      en: "The greatest gift is having you with us on our special day. However, if you wish to honor us with a gift or contribute to our honeymoon, here are the options:",
+      si: "අපගේ විශේෂ දිනයට ඔබගේ පැමිණීම අපට ලැබෙන උතුම්ම ත්‍යාගයයි. ඔබ අප වෙනුවෙන් තිළිණයක් පිරිනැමීමට හෝ සුබපැතුම් එක් කිරීමට කැමති නම්:"
     },
     bankDetails: {
-      bank: "Banco Santander",
+      bank: "Commercial Bank / Bank of America",
       holder: "Fernanda & Gustavo",
       clabe: "012 180 0154897214 90",
       account: "6550 4932 8109",
-      concept: "Boda F&G"
+      concept: "Wedding F&G"
     },
     digitalWallet: {
-      type: "Zelle / Venmo",
-      handle: "fernanda.gustavo.boda@gmail.com"
+      type: "Zelle / Digital Gift",
+      handle: "fernanda.gustavo.wedding@gmail.com"
     }
   },
   recommendations: [
     {
       icon: "heart",
-      title: { es: "Puntualidad", en: "Punctuality" },
+      title: { en: "Punctuality", si: "වේලාවට පැමිණීම" },
       desc: {
-        es: "Seguir las indicaciones del personal y llegar con anticipación para disfrutar cada momento.",
-        en: "Please follow coordinator guidelines and arrive early to cherish every moment."
+        en: "Please follow coordinator guidelines and arrive early to cherish every moment.",
+        si: "මංගල උත්සවයේ සියලු සුන්දර අවස්ථාවන් භුක්ති විඳීමට නියමිත වේලාවට පෙර පැමිණෙන්න."
       }
     },
     {
       icon: "child",
-      title: { es: "Solo Adultos", en: "Adults Only" },
+      title: { en: "Adults Only", si: "වැඩිහිටියන් පමණයි" },
       desc: {
-        es: "Un respiro para adultos. Aunque adoramos a los pequeños, deseamos que todos puedan relajarse y disfrutar la fiesta.",
-        en: "An adults-only celebration. While we adore your little ones, we hope you enjoy a wonderful night out."
+        en: "An adults-only celebration. While we adore your little ones, we hope you enjoy a wonderful night out.",
+        si: "මෙය වැඩිහිටියන් වෙනුවෙන් වෙන් වූ රාත්‍රියකි. ඔබ සැමට ප්‍රීතිමත් නිදහස් රාත්‍රියක් ගත කිරීමට ආරාධනා කරමු."
       }
     },
     {
       icon: "clock",
-      title: { es: "Confirmación Oportuna", en: "Timely RSVP" },
+      title: { en: "Timely RSVP", si: "කලින් තහවුරු කිරීම" },
       desc: {
-        es: "Favor de confirmar su asistencia antes del 01 de Noviembre para reservar sus lugares.",
-        en: "Please confirm your attendance before November 1st to reserve your seats."
+        en: "Please confirm your attendance before November 1st to reserve your seats.",
+        si: "ඔබගේ ආසන වෙන් කරවා ගැනීම සඳහා නොවැම්බර් 01 වන දිනට පෙර පැමිණීම තහවුරු කරන්න."
       }
     }
   ],
   gallery: [
     {
       src: "/images/couple_hero.jpg",
-      caption: { es: "Jardín de Villa Cascada", en: "Villa Cascada Terrace" },
+      caption: { en: "Villa Cascada Terrace", si: "විලා කැස්කේඩා පරිශ්‍රය" },
       tag: "Golden Hour"
     },
     {
       src: "/images/couple_walk.jpg",
-      caption: { es: "Paseo entre viñedos", en: "Walk Through The Vineyards" },
+      caption: { en: "Walk Through The Vineyards", si: "ආදරණීය මතකයන්" },
       tag: "Candid Love"
     },
     {
       src: "/images/couple_intimate.jpg",
-      caption: { es: "Risas y promesas eternas", en: "Laughter & Forever Promises" },
+      caption: { en: "Laughter & Forever Promises", si: "සදාතනික ආදරය හා පොරොන්දු" },
       tag: "Intimate Joy"
     }
   ]

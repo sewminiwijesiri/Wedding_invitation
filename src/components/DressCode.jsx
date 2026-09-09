@@ -27,7 +27,7 @@ export default function DressCode({ weddingData, lang }) {
               <circle cx="12" cy="18" r="1" fill="currentColor" />
             </svg>
           </div>
-          <span className={styles.figureLabel}>{lang === "es" ? "Caballeros" : "Gentlemen"}</span>
+          <span className={styles.figureLabel}>{lang === "si" ? "පිරිමින් සඳහා" : "Gentlemen"}</span>
         </div>
 
         <div className={styles.attireFigure}>
@@ -39,17 +39,17 @@ export default function DressCode({ weddingData, lang }) {
               <path d="M10 7c0 3 4 3 4 0" />
             </svg>
           </div>
-          <span className={styles.figureLabel}>{lang === "es" ? "Damas" : "Ladies"}</span>
+          <span className={styles.figureLabel}>{lang === "si" ? "කාන්තාවන් සඳහා" : "Ladies"}</span>
         </div>
       </div>
 
       <div className={styles.guidelinesBox}>
         <p className={styles.guidelineItem}>
-          <strong>{lang === "es" ? "Damas: " : "Ladies: "}</strong>
+          <strong>{lang === "si" ? "කාන්තාවන්: " : "Ladies: "}</strong>
           {dressCode.women[lang]}
         </p>
         <p className={styles.guidelineItem}>
-          <strong>{lang === "es" ? "Caballeros: " : "Gentlemen: "}</strong>
+          <strong>{lang === "si" ? "පිරිමින්: " : "Gentlemen: "}</strong>
           {dressCode.men[lang]}
         </p>
       </div>
@@ -61,7 +61,7 @@ export default function DressCode({ weddingData, lang }) {
 
       {/* Suggested Palette Swatches */}
       <p className={styles.paletteTitle}>
-        {lang === "es" ? "Gama de Colores Sugerida" : "Suggested Color Palette"}
+        {lang === "si" ? "යෝජිත වර්ණ සංයෝජනය" : "Suggested Color Palette"}
       </p>
       <div className={styles.swatchesRow}>
         {dressCode.palette.map((item, idx) => (

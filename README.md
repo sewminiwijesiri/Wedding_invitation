@@ -16,7 +16,7 @@ Designed with a warm **champagne beige, gold foil, pearl white, and velvet charc
 - **👗 Dress Code Guide**: Attire guide for ladies and gentlemen with color palette swatches.
 - **🎁 Gift Registry & Bank Info**: Scannable QR code and bank transfer card with 1-click clipboard copy and toast notification.
 - **✉️ Interactive RSVP**: Full attendance form with guest count, meal/diet preferences, song request, and a celebratory **gold confetti burst**.
-- **🌐 English Primary & Bilingual Toggle**: Default English with a 1-tap Spanish switcher (`EN` / `ES`).
+- **🌐 English & Sinhala Bilingual Toggle**: Instant 1-tap switcher between English and Sinhala (`English` / `සිංහල`) with authentic, respectful translations and Noto Serif Sinhala typography.
 - **✨ Ambient Gold Sparkles**: Soft floating golden dust particles overlay.
 
 ---

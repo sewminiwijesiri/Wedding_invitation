@@ -9,10 +9,10 @@ export default function GiftRegistry({ weddingData, lang }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
-    const isEn = lang !== "es";
-    const textToCopy = isEn
-      ? `Bank: ${giftRegistry.bankDetails.bank}\nAccount Holder: ${giftRegistry.bankDetails.holder}\nRouting / CLABE: ${giftRegistry.bankDetails.clabe}\nAccount Number: ${giftRegistry.bankDetails.account}\nReference: ${giftRegistry.bankDetails.concept}`
-      : `Banco: ${giftRegistry.bankDetails.bank}\nTitular: ${giftRegistry.bankDetails.holder}\nCLABE: ${giftRegistry.bankDetails.clabe}\nCuenta: ${giftRegistry.bankDetails.account}\nConcepto: ${giftRegistry.bankDetails.concept}`;
+    const isSi = lang === "si";
+    const textToCopy = isSi
+      ? `බැංකුව: ${giftRegistry.bankDetails.bank}\nගිණුම් හිමියා: ${giftRegistry.bankDetails.holder}\nශාඛා / CLABE අංකය: ${giftRegistry.bankDetails.clabe}\nගිණුම් අංකය: ${giftRegistry.bankDetails.account}\nවිස්තරය: ${giftRegistry.bankDetails.concept}`
+      : `Bank: ${giftRegistry.bankDetails.bank}\nAccount Holder: ${giftRegistry.bankDetails.holder}\nRouting / CLABE: ${giftRegistry.bankDetails.clabe}\nAccount Number: ${giftRegistry.bankDetails.account}\nReference: ${giftRegistry.bankDetails.concept}`;
 
     if (navigator?.clipboard) {
       navigator.clipboard.writeText(textToCopy);
@@ -73,26 +73,26 @@ export default function GiftRegistry({ weddingData, lang }) {
           </svg>
         </div>
         <p className={styles.qrScanHint}>
-          {lang === "es" ? "Escanear para transferir" : "Scan to send digital gift"}
+          {lang === "si" ? "ඩිජිටල් තිළිණයක් යැවීමට ස්කෑන් කරන්න" : "Scan to send digital gift"}
         </p>
       </div>
 
       {/* Bank Details */}
       <div className={styles.bankDetailsBox}>
         <div className={styles.bankRow}>
-          <span className={styles.bankLabel}>{lang === "es" ? "Banco" : "Bank"}</span>
+          <span className={styles.bankLabel}>{lang === "si" ? "බැංකුව" : "Bank"}</span>
           <span className={styles.bankValue}>{giftRegistry.bankDetails.bank}</span>
         </div>
         <div className={styles.bankRow}>
-          <span className={styles.bankLabel}>{lang === "es" ? "Beneficiario" : "Holder"}</span>
+          <span className={styles.bankLabel}>{lang === "si" ? "ගිණුම් හිමියා" : "Holder"}</span>
           <span className={styles.bankValue}>{giftRegistry.bankDetails.holder}</span>
         </div>
         <div className={styles.bankRow}>
-          <span className={styles.bankLabel}>{lang === "es" ? "CLABE" : "Routing / CLABE"}</span>
+          <span className={styles.bankLabel}>{lang === "si" ? "ශාඛාව / Routing" : "Routing / Branch"}</span>
           <span className={styles.bankValue}>{giftRegistry.bankDetails.clabe}</span>
         </div>
         <div className={styles.bankRow}>
-          <span className={styles.bankLabel}>{lang === "es" ? "Cuenta" : "Account"}</span>
+          <span className={styles.bankLabel}>{lang === "si" ? "ගිණුම් අංකය" : "Account"}</span>
           <span className={styles.bankValue}>{giftRegistry.bankDetails.account}</span>
         </div>
       </div>
@@ -100,14 +100,14 @@ export default function GiftRegistry({ weddingData, lang }) {
       {/* Copy Button */}
       <button className="btn-gold" onClick={handleCopy}>
         {copied ? <Check size={16} /> : <Copy size={16} />}
-        <span>{copied ? (lang === "es" ? "¡Datos Copiados!" : "Copied!") : (lang === "es" ? "Copiar Datos Bancarios" : "Copy Bank Details")}</span>
+        <span>{copied ? (lang === "si" ? "පිටපත් කරන ලදී!" : "Copied!") : (lang === "si" ? "ගිණුම් විස්තර පිටපත් කරන්න" : "Copy Bank Details")}</span>
       </button>
 
       {copied && (
         <div>
           <div className={styles.copySuccessToast}>
             <Check size={14} />
-            <span>{lang === "es" ? "Datos copiados al portapapeles con éxito" : "Information copied to clipboard"}</span>
+            <span>{lang === "si" ? "ගිණුම් විස්තර පිටපත් කරගන්නා ලදී" : "Information copied to clipboard"}</span>
           </div>
         </div>
       )}

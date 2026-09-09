@@ -33,10 +33,10 @@ export default function ItineraryTimeline({ weddingData, lang }) {
   return (
     <div className={styles.timelineCard}>
       <h3 className={styles.timelineTitle}>
-        {lang === "es" ? "Itinerario de actividades" : "Wedding Itinerary"}
+        {lang === "si" ? "විවාහ දින කාලසටහන" : "Wedding Itinerary"}
       </h3>
       <p className={styles.timelineSubtitle}>
-        {lang === "es" ? "El orden de nuestro gran día" : "The flow of our special day"}
+        {lang === "si" ? "අපගේ විශේෂ දවසේ සුන්දර හෝරාවන්" : "The flow of our special day"}
       </p>
 
       <div className={styles.timelineTrack}>
@@ -50,7 +50,7 @@ export default function ItineraryTimeline({ weddingData, lang }) {
             >
               {/* Text content side */}
               <div className={styles.timelineContent}>
-                <span className={styles.itemTime}>{item.time}</span>
+                <span className={styles.itemTime}>{lang === "si" ? (item.timeSi || item.time) : item.time}</span>
                 <h4 className={styles.itemTitle}>{item.title[lang]}</h4>
                 <p className={styles.itemDesc}>{item.desc[lang]}</p>
               </div>

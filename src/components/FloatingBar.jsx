@@ -21,20 +21,20 @@ export default function FloatingBar({ lang, onToggleLang }) {
       <button 
         onClick={onToggleLang} 
         className={styles.langBtn}
-        title={lang === "es" ? "Switch to English" : "Cambiar a Español"}
+        title={lang === "si" ? "Switch to English" : "සිංහල භාෂාවට මාරු වන්න (Switch to Sinhala)"}
       >
         <Globe size={14} />
-        <span>{lang.toUpperCase()}</span>
+        <span>{lang === "si" ? "English" : "සිංහල"}</span>
       </button>
 
       {/* Quick RSVP action */}
       <button onClick={scrollToRsvp} className={styles.rsvpQuickBtn}>
         <Heart size={14} fill="#111111" />
-        <span>{lang === "es" ? "Confirmar" : "RSVP"}</span>
+        <span>{lang === "si" ? "තහවුරු කරන්න" : "RSVP"}</span>
       </button>
 
       {/* Scroll to Top */}
-      <button onClick={scrollToTop} className={styles.topBtn} title={lang === "es" ? "Volver arriba" : "Scroll to top"}>
+      <button onClick={scrollToTop} className={styles.topBtn} title={lang === "si" ? "ඉහළට යන්න" : "Scroll to top"}>
         <ArrowUp size={16} />
       </button>
     </div>

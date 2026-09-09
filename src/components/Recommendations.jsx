@@ -11,7 +11,7 @@ export default function Recommendations({ weddingData, lang }) {
     <div className={styles.recCard}>
       <Heart size={20} className={styles.heartHeaderIcon} fill="var(--gold-dark)" />
       <h4 className={styles.recHeaderTitle}>
-        {lang === "es" ? "RECOMENDACIONES" : "GUEST GUIDELINES"}
+        {lang === "si" ? "විශේෂ උපදෙස්" : "GUEST GUIDELINES"}
       </h4>
 
       {recommendations.map((rec, idx) => (
@@ -25,11 +25,11 @@ export default function Recommendations({ weddingData, lang }) {
       <div className={styles.divider} style={{ width: "120px", margin: "28px auto 14px" }} />
 
       <p className={styles.closingInvitationPrompt}>
-        {lang === "es" ? "ESPERAMOS CONTAR CON SU PRESENCIA" : "WE LOOK FORWARD TO CELEBRATING TOGETHER"}
+        {lang === "si" ? "ඔබගේ පැමිණීම අප මහත් සේ අගය කරමු" : "WE LOOK FORWARD TO CELEBRATING TOGETHER"}
       </p>
 
       <h3 className={styles.thankYouScript}>
-        {lang === "es" ? "¡Muchas Gracias!" : "Thank You!"}
+        {lang === "si" ? "ඉතාමත් ස්තූතියි!" : "Thank You!"}
       </h3>
 
       {/* Final Intimate Portrait */}

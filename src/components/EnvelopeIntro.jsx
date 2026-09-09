@@ -26,7 +26,7 @@ export default function EnvelopeIntro({ weddingData, lang, onOpen }) {
       <div className={styles.ambientGlow} />
 
       <p className={styles.introSubtitle}>
-        {lang === "es" ? "Nuestra Invitación de Boda" : "Our Wedding Invitation"}
+        {lang === "si" ? "අපගේ මංගල ආරාධනාව" : "Our Wedding Invitation"}
       </p>
 
       {/* 3D Envelope */}
@@ -35,7 +35,7 @@ export default function EnvelopeIntro({ weddingData, lang, onOpen }) {
         onClick={handleOpen} 
         role="button" 
         tabIndex={0} 
-        aria-label={lang === "es" ? "Abrir invitación" : "Open invitation"}
+        aria-label={lang === "si" ? "ආරාධනා පත්‍රය විවෘත කරන්න" : "Open invitation"}
         onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") handleOpen(); }}
       >
         <div className={styles.envelopeBody}>
@@ -45,7 +45,7 @@ export default function EnvelopeIntro({ weddingData, lang, onOpen }) {
               {weddingData.couple.bride} & {weddingData.couple.groom}
             </span>
             <span className={styles.innerDate}>
-              {weddingData.date.day} · {lang === "es" ? weddingData.date.month : weddingData.date.monthEn} · {weddingData.date.year}
+              {weddingData.date.day} · {lang === "si" ? (weddingData.date.monthSi || weddingData.date.month) : weddingData.date.monthEn} · {weddingData.date.year}
             </span>
           </div>
 
@@ -71,7 +71,7 @@ export default function EnvelopeIntro({ weddingData, lang, onOpen }) {
       <div className={styles.tapInstruction} onClick={handleOpen}>
         <Sparkles size={16} className={styles.tapSparkle} />
         <span>
-          {lang === "es" ? "Toca el sello para abrir" : "Tap the seal to open"}
+          {lang === "si" ? "විවෘත කිරීමට මුද්‍රාව ස්පර්ශ කරන්න" : "Tap the seal to open"}
         </span>
         <Sparkles size={16} className={styles.tapSparkle} />
       </div>

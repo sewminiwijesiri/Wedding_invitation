@@ -22,7 +22,7 @@ export default function WeddingPage() {
   const [envelopeKey, setEnvelopeKey] = useState(0); // for re-opening envelope
 
   const toggleLanguage = () => {
-    setLang((prev) => (prev === "en" ? "es" : "en"));
+    setLang((prev) => (prev === "en" ? "si" : "en"));
   };
 
   const reopenEnvelope = () => {
@@ -113,7 +113,7 @@ export default function WeddingPage() {
             style={{ fontSize: "0.68rem", padding: "8px 18px" }}
           >
             <Mail size={14} />
-            <span>{lang === "es" ? "Ver Sobre de Nuevo" : "Replay Envelope"}</span>
+            <span>{lang === "si" ? "ආරාධනා පත්‍රය නැවත බලන්න" : "Replay Envelope"}</span>
           </button>
         </footer>
       </article>

@@ -46,9 +46,9 @@ export default function CountdownCalendar({ weddingData, lang }) {
 
   // Calendar for November 2026 (Nov 1 is Sunday, 30 days)
   // Day of week: Dom (0), Lun (1), Mar (2), Mie (3), Jue (4), Vie (5), Sab (6)
-  const weekdaysEs = ["DOM", "LUN", "MAR", "MIÉ", "JUE", "VIE", "SÁB"];
+  const weekdaysSi = ["ඉරි", "සඳු", "අඟ", "බදා", "බ්‍රහ", "සිකු", "සෙන"];
   const weekdaysEn = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
-  const weekdays = lang === "es" ? weekdaysEs : weekdaysEn;
+  const weekdays = lang === "si" ? weekdaysSi : weekdaysEn;
 
   // Generate calendar days for November 2026 (Nov 1 is Sunday, 0 padding)
   const daysInMonth = 30;
@@ -70,12 +70,12 @@ export default function CountdownCalendar({ weddingData, lang }) {
 
   // Generate Google Calendar Link
   const getGoogleCalendarUrl = () => {
-    const isEn = lang !== "es";
-    const title = encodeURIComponent(`${weddingData.couple.bride} & ${weddingData.couple.groom} - ${isEn ? "Our Wedding" : "Nuestra Boda"}`);
+    const isSi = lang === "si";
+    const title = encodeURIComponent(`${weddingData.couple.bride} & ${weddingData.couple.groom} - ${isSi ? "අපගේ විවාහ මංගල්‍යය" : "Our Wedding"}`);
     const details = encodeURIComponent(
-      isEn
-        ? `Ceremony: ${weddingData.events[0].venue} (${weddingData.events[0].time})\nReception: ${weddingData.events[1].venue} (${weddingData.events[1].time})`
-        : `Ceremonia: ${weddingData.events[0].venue} (${weddingData.events[0].time})\nRecepción: ${weddingData.events[1].venue} (${weddingData.events[1].time})`
+      isSi
+        ? `මංගල චාරිත්‍ර: ${weddingData.events[0].venueSi || weddingData.events[0].venue} (${weddingData.events[0].timeSi || weddingData.events[0].time})\nමංගල සාදය: ${weddingData.events[1].venueSi || weddingData.events[1].venue} (${weddingData.events[1].timeSi || weddingData.events[1].time})`
+        : `Ceremony: ${weddingData.events[0].venue} (${weddingData.events[0].time})\nReception: ${weddingData.events[1].venue} (${weddingData.events[1].time})`
     );
     const location = encodeURIComponent(`${weddingData.events[0].venue}, ${weddingData.events[0].address}`);
     // 20261114T163000 to 20261115T020000
@@ -89,7 +89,7 @@ export default function CountdownCalendar({ weddingData, lang }) {
       <div className={styles.dateHeaderRow}>
         <div className={styles.headerLine} />
         <div className={styles.dateBadge}>
-          <span>{lang === "es" ? (date.dayNameEs || date.dayName).toUpperCase() : (date.dayNameEn || date.dayName).toUpperCase()}</span>
+          <span>{lang === "si" ? (date.dayNameSi || date.dayName) : (date.dayNameEn || date.dayName).toUpperCase()}</span>
           <span className={styles.dayNumber}>{date.day}</span>
           <span>{date.year}</span>
         </div>
@@ -98,28 +98,28 @@ export default function CountdownCalendar({ weddingData, lang }) {
 
       {/* Countdown Clock */}
       <p className={styles.countdownTitle}>
-        {lang === "es" ? "FALTAN" : "COUNTDOWN"}
+        {lang === "si" ? "ඉතිරි කාලය" : "COUNTDOWN"}
       </p>
 
       <div className={styles.clockGrid}>
         <div className={styles.timeBox}>
           <span className={styles.timeDigit}>{timeLeft.days}</span>
-          <span className={styles.timeLabel}>{lang === "es" ? "Días" : "Days"}</span>
+          <span className={styles.timeLabel}>{lang === "si" ? "දින" : "Days"}</span>
         </div>
         <span className={styles.colonDivider}>:</span>
         <div className={styles.timeBox}>
           <span className={styles.timeDigit}>{timeLeft.hours}</span>
-          <span className={styles.timeLabel}>{lang === "es" ? "Horas" : "Hours"}</span>
+          <span className={styles.timeLabel}>{lang === "si" ? "පැය" : "Hours"}</span>
         </div>
         <span className={styles.colonDivider}>:</span>
         <div className={styles.timeBox}>
           <span className={styles.timeDigit}>{timeLeft.minutes}</span>
-          <span className={styles.timeLabel}>{lang === "es" ? "Min" : "Min"}</span>
+          <span className={styles.timeLabel}>{lang === "si" ? "මිනිත්තු" : "Mins"}</span>
         </div>
         <span className={styles.colonDivider}>:</span>
         <div className={styles.timeBox}>
           <span className={styles.timeDigit}>{timeLeft.seconds}</span>
-          <span className={styles.timeLabel}>{lang === "es" ? "Seg" : "Sec"}</span>
+          <span className={styles.timeLabel}>{lang === "si" ? "තත්පර" : "Secs"}</span>
         </div>
       </div>
 
@@ -127,10 +127,10 @@ export default function CountdownCalendar({ weddingData, lang }) {
 
       {/* Calendar Section */}
       <h4 className={styles.calendarTitle}>
-        {lang === "es" ? "EL GRAN DÍA" : "THE BIG DAY"}
+        {lang === "si" ? "මංගල දිනය" : "THE BIG DAY"}
       </h4>
       <p className={styles.calendarMonthName}>
-        {lang === "es" ? date.month : date.monthEn} {date.year}
+        {lang === "si" ? date.monthSi : date.monthEn} {date.year}
       </p>
 
       <table className={styles.calendarTable}>
@@ -179,7 +179,7 @@ export default function CountdownCalendar({ weddingData, lang }) {
           className="btn-outline-gold"
         >
           <Calendar size={14} />
-          <span>{lang === "es" ? "Agregar a Calendario" : "Add to Calendar"}</span>
+          <span>{lang === "si" ? "දින දර්ශනයට එක් කරන්න" : "Add to Calendar"}</span>
         </a>
       </div>
     </div>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@200;300;400;500;600;700&family=Pinyon+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@200;300;400;500;600;700&family=Noto+Serif+Sinhala:wght@300;400;500;600;700&family=Pinyon+Script&display=swap');
 
 :root {
   /* Luxury Beige & Gold Palette */
@@ -34,9 +34,10 @@
   --shadow-envelope: 0 24px 60px rgba(50, 40, 30, 0.18);
 
   /* Typography */
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
-  --font-sans: 'Montserrat', system-ui, -apple-system, sans-serif;
-  --font-script: 'Pinyon Script', cursive;
+  --font-serif: 'Cormorant Garamond', 'Noto Serif Sinhala', Georgia, serif;
+  --font-sans: 'Montserrat', 'Noto Serif Sinhala', system-ui, -apple-system, sans-serif;
+  --font-script: 'Pinyon Script', 'Noto Serif Sinhala', cursive;
+  --font-sinhala: 'Noto Serif Sinhala', 'Iskoola Pota', serif;
 
   /* Transitions */
   --transition-smooth: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
