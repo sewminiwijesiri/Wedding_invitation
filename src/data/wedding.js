@@ -14,7 +14,8 @@ export const weddingData = {
     parentBlessing: {
       en: "With the blessing of God and our beloved parents, we cordially invite you to celebrate our Wedding.",
       si: "දෙමාපියන්ගේ ආශිර්වාදයෙන් යුතුව, අපගේ විවාහ මංගල්‍යය වෙනුවෙන් ඔබ සැමට ගෞරවයෙන් ආරාධනා කරමු."
-    }
+    },
+    heroImage: "/images/couple_hero.jpg"
   },
   date: {
     target: "2026-10-16T16:30:00",
