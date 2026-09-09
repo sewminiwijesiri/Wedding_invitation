@@ -186,26 +186,26 @@ export const weddingData = {
       icon: "clock",
       title: { en: "Timely RSVP", si: "කලින් තහවුරු කිරීම" },
       desc: {
-        en: "Please confirm your attendance before November 1st to reserve your seats.",
-        si: "ඔබගේ ආසන වෙන් කරවා ගැනීම සඳහා නොවැම්බර් 01 වන දිනට පෙර පැමිණීම තහවුරු කරන්න."
+        en: "Please confirm your attendance before October 1st to reserve your seats.",
+        si: "ඔබගේ ආසන වෙන් කරවා ගැනීම සඳහා ඔක්තෝබර් 01 වන දිනට පෙර පැමිණීම තහවුරු කරන්න."
       }
     }
   ],
   gallery: [
     {
       src: "/images/couple_hero.jpg",
-      caption: { en: "Villa Cascada Terrace", si: "විලා කැස්කේඩා පරිශ්‍රය" },
-      tag: "Golden Hour"
+      caption: { en: "Yasas & Sanduni", si: "යසස් සහ සඳුනි" },
+      tag: "Pre-shoot"
     },
     {
       src: "/images/couple_walk.jpg",
-      caption: { en: "Walk Through The Vineyards", si: "ආදරණීය මතකයන්" },
-      tag: "Candid Love"
+      caption: { en: "A Love Story", si: "ආදරණීය මතකයන්" },
+      tag: "Together"
     },
     {
       src: "/images/couple_intimate.jpg",
-      caption: { en: "Laughter & Forever Promises", si: "සදාතනික ආදරය හා පොරොන්දු" },
-      tag: "Intimate Joy"
+      caption: { en: "Forever Begins Here", si: "සදාතනික ආදරයේ ඇරඹුම" },
+      tag: "Forever"
     }
   ]
 };

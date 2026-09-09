@@ -76,8 +76,8 @@ export default function RsvpForm({ weddingData, lang }) {
       </h3>
       <p className={styles.rsvpSubtitle}>
         {lang === "si"
-          ? "කරුණාකර නොවැම්බර් 01 වන දිනට පෙර ඔබගේ පැමිණීම තහවුරු කරන්න."
-          : "Kindly confirm your attendance before November 1st."}
+          ? "කරුණාකර ඔක්තෝබර් 01 වන දිනට පෙර ඔබගේ පැමිණීම තහවුරු කරන්න."
+          : "Kindly confirm your attendance before October 1st."}
       </p>
 
       {submitted ? (
