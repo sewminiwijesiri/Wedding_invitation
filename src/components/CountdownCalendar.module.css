@@ -1,0 +1,185 @@
+.countdownCard {
+  margin: 20px 20px 26px;
+  background: linear-gradient(180deg, #E6DDCF 0%, #DDD2C0 100%);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 18px;
+  padding: 30px 20px;
+  box-shadow: 0 10px 28px rgba(70, 55, 35, 0.12);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.dateHeaderRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.headerLine {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6), transparent);
+}
+
+.dateBadge {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  letter-spacing: 4px;
+  font-weight: 600;
+  color: #262420;
+  text-transform: uppercase;
+}
+
+.dayNumber {
+  font-family: var(--font-script);
+  font-size: 2.8rem;
+  color: var(--gold-dark);
+  line-height: 0.8;
+  margin: 0 6px;
+  display: inline-block;
+}
+
+/* Countdown Clock */
+.countdownTitle {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #595143;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.clockGrid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.timeBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 58px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(6px);
+  padding: 10px 6px 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.timeDigit {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.timeLabel {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #706859;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.colonDivider {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--gold-primary);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* Calendar Section */
+.calendarDivider {
+  height: 1px;
+  background: rgba(212, 175, 55, 0.35);
+  margin: 20px 0 24px;
+}
+
+.calendarTitle {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--text-black);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.calendarMonthName {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: #4A4234;
+  margin-bottom: 16px;
+}
+
+.calendarTable {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto 20px;
+  border-collapse: collapse;
+}
+
+.weekHeader {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #787060;
+  padding: 6px 0;
+  font-weight: 600;
+}
+
+.calendarDayCell {
+  width: 14.28%;
+  height: 38px;
+  text-align: center;
+  vertical-align: middle;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: #38342D;
+}
+
+.emptyCell {
+  color: transparent;
+}
+
+.circledDay {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  font-weight: 700;
+  color: #111111;
+}
+
+.heartRing {
+  position: absolute;
+  inset: -4px;
+  color: var(--gold-primary);
+  animation: heartThrob 2.4s infinite ease-in-out;
+}
+
+@keyframes heartThrob {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.calendarActions {
+  margin-top: 18px;
+}

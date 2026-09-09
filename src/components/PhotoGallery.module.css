@@ -1,0 +1,51 @@
+.gallerySection {
+  padding: 10px 20px 24px;
+}
+
+.featuredPhotoCard {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: 0 10px 30px rgba(60, 45, 25, 0.15);
+  background: #EBE4D8;
+}
+
+.galleryImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.featuredPhotoCard:hover .galleryImg {
+  transform: scale(1.04);
+}
+
+.photoCaptionOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(0deg, rgba(20, 18, 14, 0.8) 0%, transparent 100%);
+  padding: 30px 18px 16px;
+  text-align: center;
+  color: #FFFDF8;
+}
+
+.photoTag {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.captionText {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+}

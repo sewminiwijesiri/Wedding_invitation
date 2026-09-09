@@ -1,0 +1,163 @@
+.eventSection {
+  padding: 10px 20px 24px;
+}
+
+.eventCard {
+  background: #FCFAF7;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 16px;
+  padding: 28px 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.eventCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.iconWrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  color: var(--gold-dark);
+}
+
+.eventTitle {
+  font-family: var(--font-script);
+  font-size: 2.5rem;
+  color: var(--text-black);
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.eventTime {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: var(--gold-dark);
+  margin-bottom: 8px;
+}
+
+.venueName {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #1A1A1A;
+  margin-bottom: 4px;
+}
+
+.venueAddress {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  max-width: 280px;
+  margin: 0 auto 14px;
+  line-height: 1.5;
+}
+
+.eventNote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.88rem;
+  color: #615848;
+  margin-bottom: 18px;
+}
+
+/* Map Modal */
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 18, 14, 0.65);
+  backdrop-filter: blur(5px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modalContent {
+  background: #FCFAF7;
+  border-radius: 16px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  max-width: 440px;
+  width: 100%;
+  padding: 24px;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px) scale(0.95); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.closeButton {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  transition: var(--transition-smooth);
+}
+
+.closeButton:hover {
+  color: #000;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.modalVenueTitle {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-black);
+  margin-bottom: 6px;
+}
+
+.modalVenueAddress {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+.mapEmbedFrame {
+  width: 100%;
+  height: 220px;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  overflow: hidden;
+  margin-bottom: 18px;
+  background: #EBE5D8;
+}
+
+.mapActions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}

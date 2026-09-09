@@ -1,0 +1,124 @@
+.timelineCard {
+  margin: 10px 20px 26px;
+  background: #FCFAF7;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 18px;
+  padding: 34px 20px;
+  box-shadow: 0 8px 24px rgba(90, 75, 55, 0.08);
+  text-align: center;
+  position: relative;
+}
+
+.timelineTitle {
+  font-family: var(--font-script);
+  font-size: 2.8rem;
+  color: var(--text-black);
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+
+.timelineSubtitle {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  font-weight: 600;
+  margin-bottom: 36px;
+}
+
+.timelineTrack {
+  position: relative;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+/* Center vertical dashed line */
+.timelineTrack::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  border-left: 2px dashed rgba(212, 175, 55, 0.5);
+}
+
+.timelineItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 36px;
+  position: relative;
+}
+
+.timelineItem:last-child {
+  margin-bottom: 10px;
+}
+
+/* Alternate sides */
+.timelineItem.left {
+  flex-direction: row-reverse;
+}
+
+.timelineContent {
+  width: 42%;
+  text-align: left;
+  padding: 0 10px;
+}
+
+.timelineItem.left .timelineContent {
+  text-align: right;
+}
+
+.itemTime {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  color: var(--gold-dark);
+}
+
+.itemTitle {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #24221E;
+  margin: 2px 0;
+}
+
+.itemDesc {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Center Icon Node */
+.timelineNode {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #FCFAF7;
+  border: 2px solid var(--gold-primary);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-dark);
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.timelineItem:hover .timelineNode {
+  transform: scale(1.15);
+  background: var(--gold-metallic);
+  color: #111;
+}
+
+.timelineEmptySpace {
+  width: 42%;
+}
