@@ -19,9 +19,9 @@ export default function HeroSection({ weddingData, lang }) {
         </p>
 
         <h1 className={styles.coupleNames}>
-          <span>{couple.bride}</span>
+          <span>{lang === "si" ? (couple.groomSi || couple.groom) : couple.groom}</span>
           <span className={styles.ampersand}>&</span>
-          <span>{couple.groom}</span>
+          <span>{lang === "si" ? (couple.brideSi || couple.bride) : couple.bride}</span>
         </h1>
 
         <div className={styles.weddingDatePill}>

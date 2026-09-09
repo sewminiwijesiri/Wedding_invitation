@@ -42,7 +42,9 @@ export default function EnvelopeIntro({ weddingData, lang, onOpen }) {
           {/* Card Peek */}
           <div className={`${styles.innerCardPeek} ${opening ? styles.slideOut : ""}`}>
             <span className={styles.innerNames}>
-              {weddingData.couple.bride} & {weddingData.couple.groom}
+              {lang === "si"
+                ? `${weddingData.couple.groomSi || weddingData.couple.groom} & ${weddingData.couple.brideSi || weddingData.couple.bride}`
+                : `${weddingData.couple.groom} & ${weddingData.couple.bride}`}
             </span>
             <span className={styles.innerDate}>
               {weddingData.date.day} · {lang === "si" ? (weddingData.date.monthSi || weddingData.date.month) : weddingData.date.monthEn} · {weddingData.date.year}

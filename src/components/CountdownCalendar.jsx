@@ -44,15 +44,19 @@ export default function CountdownCalendar({ weddingData, lang }) {
     return () => clearInterval(interval);
   }, [date.target]);
 
-  // Calendar for November 2026 (Nov 1 is Sunday, 30 days)
-  // Day of week: Dom (0), Lun (1), Mar (2), Mie (3), Jue (4), Vie (5), Sab (6)
+  // Dynamic Calendar generation based on wedding target date
   const weekdaysSi = ["ඉරි", "සඳු", "අඟ", "බදා", "බ්‍රහ", "සිකු", "සෙන"];
   const weekdaysEn = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
   const weekdays = lang === "si" ? weekdaysSi : weekdaysEn;
 
-  // Generate calendar days for November 2026 (Nov 1 is Sunday, 0 padding)
-  const daysInMonth = 30;
-  const firstDayIndex = 0; // Sunday
+  const weddingDateObj = new Date(date.target);
+  const targetYear = weddingDateObj.getFullYear() || 2026;
+  const targetMonth = weddingDateObj.getMonth() || 9; // October is 9
+  const targetDay = weddingDateObj.getDate() || parseInt(date.day, 10) || 16;
+
+  // Days in month & first day index (0 = Sun, 1 = Mon, ..., 4 = Thu)
+  const daysInMonth = new Date(targetYear, targetMonth + 1, 0).getDate();
+  const firstDayIndex = new Date(targetYear, targetMonth, 1).getDay();
   const calendarCells = [];
 
   for (let i = 0; i < firstDayIndex; i++) {
@@ -71,15 +75,14 @@ export default function CountdownCalendar({ weddingData, lang }) {
   // Generate Google Calendar Link
   const getGoogleCalendarUrl = () => {
     const isSi = lang === "si";
-    const title = encodeURIComponent(`${weddingData.couple.bride} & ${weddingData.couple.groom} - ${isSi ? "අපගේ විවාහ මංගල්‍යය" : "Our Wedding"}`);
+    const title = encodeURIComponent(`${weddingData.couple.groom} & ${weddingData.couple.bride} - ${isSi ? "අපගේ විවාහ මංගල්‍යය" : "Our Wedding"}`);
     const details = encodeURIComponent(
       isSi
         ? `මංගල චාරිත්‍ර: ${weddingData.events[0].venueSi || weddingData.events[0].venue} (${weddingData.events[0].timeSi || weddingData.events[0].time})\nමංගල සාදය: ${weddingData.events[1].venueSi || weddingData.events[1].venue} (${weddingData.events[1].timeSi || weddingData.events[1].time})`
         : `Ceremony: ${weddingData.events[0].venue} (${weddingData.events[0].time})\nReception: ${weddingData.events[1].venue} (${weddingData.events[1].time})`
     );
     const location = encodeURIComponent(`${weddingData.events[0].venue}, ${weddingData.events[0].address}`);
-    // 20261114T163000 to 20261115T020000
-    const dates = "20261114T163000/20261115T020000";
+    const dates = "20261016T163000/20261017T020000";
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;
   };
 
@@ -148,7 +151,7 @@ export default function CountdownCalendar({ weddingData, lang }) {
                 <td key={cIdx} className={styles.calendarDayCell}>
                   {dayNum === null ? (
                     <span className={styles.emptyCell}>-</span>
-                  ) : dayNum === 14 ? (
+                  ) : dayNum === targetDay ? (
                     <div className={styles.circledDay}>
                       <svg className={styles.heartRing} viewBox="0 0 36 36" fill="none">
                         <path
@@ -158,7 +161,7 @@ export default function CountdownCalendar({ weddingData, lang }) {
                           fill="rgba(212, 175, 55, 0.15)"
                         />
                       </svg>
-                      <span>14</span>
+                      <span>{targetDay}</span>
                     </div>
                   ) : (
                     <span>{dayNum}</span>

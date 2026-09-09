@@ -1,10 +1,12 @@
 export const weddingData = {
   couple: {
-    bride: "Fernanda",
-    groom: "Gustavo",
-    initials: "F & G",
-    monogram: "F&G",
-    hashtag: "#FernandaAndGustavo2026",
+    bride: "Sanduni",
+    groom: "Yasas",
+    brideSi: "සඳුනි",
+    groomSi: "යසස්",
+    initials: "Y & S",
+    monogram: "Y&S",
+    hashtag: "#YasasAndSanduni2026",
     quote: {
       en: "Two souls with but a single thought, two hearts that beat as one.",
       si: "එක් සිතුවිල්ලකින් බැඳුණු ආත්ම දෙකක්, එකට ගැහෙන හදවත් දෙකක්."
@@ -15,18 +17,18 @@ export const weddingData = {
     }
   },
   date: {
-    target: "2026-11-14T16:30:00",
-    day: "14",
-    month: "November",
-    monthEn: "November",
-    monthSi: "නොවැම්බර්",
+    target: "2026-10-16T16:30:00",
+    day: "16",
+    month: "October",
+    monthEn: "October",
+    monthSi: "ඔක්තෝබර්",
     year: "2026",
-    dayName: "Saturday",
-    dayNameEn: "Saturday",
-    dayNameSi: "සෙනසුරාදා",
+    dayName: "Friday",
+    dayNameEn: "Friday",
+    dayNameSi: "සිකුරාදා",
     fullDate: {
-      en: "Saturday, November 14, 2026",
-      si: "2026 නොවැම්බර් 14 සෙනසුරාදා"
+      en: "Friday, October 16, 2026",
+      si: "2026 ඔක්තෝබර් 16 සිකුරාදා"
     }
   },
   music: {
@@ -152,15 +154,15 @@ export const weddingData = {
       si: "අපගේ විශේෂ දිනයට ඔබගේ පැමිණීම අපට ලැබෙන උතුම්ම ත්‍යාගයයි. ඔබ අප වෙනුවෙන් තිළිණයක් පිරිනැමීමට හෝ සුබපැතුම් එක් කිරීමට කැමති නම්:"
     },
     bankDetails: {
-      bank: "Commercial Bank / Bank of America",
-      holder: "Fernanda & Gustavo",
+      bank: "Commercial Bank / Bank of Ceylon",
+      holder: "Yasas & Sanduni",
       clabe: "012 180 0154897214 90",
       account: "6550 4932 8109",
-      concept: "Wedding F&G"
+      concept: "Wedding Y&S"
     },
     digitalWallet: {
-      type: "Zelle / Digital Gift",
-      handle: "fernanda.gustavo.wedding@gmail.com"
+      type: "Online Transfer / Digital Gift",
+      handle: "yasas.sanduni.wedding@gmail.com"
     }
   },
   recommendations: [
