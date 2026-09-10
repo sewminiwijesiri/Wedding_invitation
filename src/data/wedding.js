@@ -18,18 +18,26 @@ export const weddingData = {
     heroImage: "/images/couple_hero.jpg"
   },
   date: {
-    target: "2026-10-16T16:30:00",
+    target: "2026-10-16T09:30:00",
     day: "16",
     month: "October",
     monthEn: "October",
-    monthSi: "ඔක්තෝබර්",
+    monthSi: "ඔක්තෝබර් (වප්)",
     year: "2026",
     dayName: "Friday",
     dayNameEn: "Friday",
-    dayNameSi: "සිකුරාදා",
+    dayNameSi: "කිවි දින (සිකුරාදා)",
     fullDate: {
       en: "Friday, October 16, 2026",
-      si: "2026 ඔක්තෝබර් 16 සිකුරාදා"
+      si: "2026 ක් වූ වප් මස 16 වන කිවි දින"
+    },
+    timeSpan: {
+      en: "9:30 AM – 3:30 PM",
+      si: "පූර්ව භාග 9.30 සිට අපරභාග 3.30 දක්වා"
+    },
+    poruwaTime: {
+      en: "Poruwa Ceremony at 9:40 AM",
+      si: "පෝරුවේ චාරිත්‍ර පූර්වභාග 9.40 ට"
     }
   },
   music: {
@@ -40,90 +48,108 @@ export const weddingData = {
       si: "අපගේ ආදර ගීතයට සවන් දෙන්න"
     }
   },
+  location: {
+    name: "Royal Rest House, Peradeniya",
+    hall: "Queen's Ballroom Hall",
+    city: "Peradeniya, Kandy",
+    address: "Kandy Road, Peradeniya",
+    nameSi: "රෝයල් රෙස්ට් හවුස්, පේරාදෙණිය",
+    hallSi: "ක්වීන්ස් බෝල්රූම් ශාලාව",
+    addressSi: "නුවර පාර, පේරාදෙණිය",
+    mapQuery: "Royal Rest House Peradeniya",
+    mapUrl: "https://maps.google.com/?q=Royal+Rest+House+Peradeniya"
+  },
   events: [
     {
       id: "ceremony",
-      type: "religious",
+      type: "ceremony",
       title: {
-        en: "Wedding Ceremony",
-        si: "මංගල චාරිත්‍ර හා ආශිර්වාදය"
+        en: "Poruwa Ceremony",
+        si: "පෝරුවේ චාරිත්‍ර"
       },
-      time: "4:30 PM",
-      timeSi: "පස්වරු 4:30",
-      venue: "St. Francis Cathedral & Gardens",
-      venueSi: "ශාන්ත ෆ්‍රැන්සිස් දේවස්ථානය හා උද්‍යානය",
-      address: "140 Rose Garden Avenue, Historic District",
-      addressSi: "අංක 140, රෝස මාවත, ඓතිහාසික නගරය",
-      mapQuery: "St Francis Cathedral",
-      mapUrl: "https://maps.google.com/?q=St+Francis+Cathedral",
+      time: "9:40 AM",
+      timeSi: "පූර්වභාග 9.40",
+      venue: "Queen's Ballroom Hall, Royal Rest House",
+      venueSi: "ක්වීන්ස් බෝල්රූම් ශාලාව, රෝයල් රෙස්ට් හවුස්",
+      address: "Kandy Road, Peradeniya",
+      addressSi: "නුවර පාර, පේරාදෙණිය",
+      mapQuery: "Royal Rest House Peradeniya",
+      mapUrl: "https://maps.google.com/?q=Royal+Rest+House+Peradeniya",
       note: {
-        en: "Please arrive 15 minutes before the ceremony commences",
-        si: "කරුණාකර චාරිත්‍ර ආරම්භ වීමට විනාඩි 15කට පෙර පැමිණෙන්න"
+        en: "Poruwa rituals commence at the auspicious time of 9:40 AM. Guests are kindly requested to be seated by 9:30 AM.",
+        si: "පෝරුවේ චාරිත්‍ර පූර්වභාග 9.40 ට යෙදෙන සුබ මොහොතින් ආරම්භ වේ. කරුණාකර පෙරවරු 9.30 ට පෙර අසුන් ගන්න."
       }
     },
     {
       id: "reception",
       type: "party",
       title: {
-        en: "Reception & Gala Dinner",
-        si: "මංගල සාදය සහ රාත්‍රී භෝජන සංග්‍රහය"
+        en: "Wedding Reception & Luncheon",
+        si: "මංගල සාදය සහ දිවා භෝජන සංග්‍රහය"
       },
-      time: "6:00 PM",
-      timeSi: "පස්වරු 6:00",
-      venue: "Villa Vendimia & Cascade Terrace",
-      venueSi: "විලා වෙන්ඩිමියා ප්‍රසංග ශාලාව",
-      address: "45 Royal Vineyard Way, Golden Valley",
-      addressSi: "අංක 45, රෝයල් විනයාඩ් මාවත, ගෝල්ඩන් වැලි",
-      mapQuery: "Villa Vendimia",
-      mapUrl: "https://maps.google.com/?q=Villa+Vendimia",
+      time: "9:30 AM – 3:30 PM",
+      timeSi: "පූර්ව භාග 9.30 සිට අපරභාග 3.30 දක්වා",
+      venue: "Queen's Ballroom Hall, Royal Rest House",
+      venueSi: "ක්වීන්ස් බෝල්රූම් ශාලාව, රෝයල් රෙස්ට් හවුස්",
+      address: "Kandy Road, Peradeniya",
+      addressSi: "නුවර පාර, පේරාදෙණිය",
+      mapQuery: "Royal Rest House Peradeniya",
+      mapUrl: "https://maps.google.com/?q=Royal+Rest+House+Peradeniya",
       note: {
-        en: "Welcome cocktail followed by dinner, toasts & dancing",
-        si: "පිළිගැනීමේ සංග්‍රහය, රාත්‍රී භෝජනය, සුබපැතුම් සහ ප්‍රීතිමත් නැටුම්"
+        en: "Traditional refreshments, luncheon banquet, toasts & music until 3:30 PM",
+        si: "සාම්ප්‍රදායික සංග්‍රහ, දිවා භෝජන සංග්‍රහය, සුබපැතුම් සහ ප්‍රීතිමත් සැමරුම අපරභාග 3.30 දක්වා"
       }
     }
   ],
   itinerary: [
     {
-      time: "4:30 PM",
-      timeSi: "ප.ව. 4:30",
-      icon: "church",
-      title: { en: "Wedding Ceremony", si: "මංගල චාරිත්‍ර" },
-      desc: { en: "Sacred union of love & vows", si: "ආදරයේ සදාතනික එක්වීම හා පොරොන්දු" }
-    },
-    {
-      time: "5:45 PM",
-      timeSi: "ප.ව. 5:45",
+      time: "9:30 AM",
+      timeSi: "පෙ.ව. 9:30",
       icon: "cocktail",
-      title: { en: "Welcome Cocktail", si: "පිළිගැනීමේ සංග්‍රහය" },
-      desc: { en: "Champagne, hors d'oeuvres & acoustic music", si: "ෂැම්පේන්, රසවත් කෙටි ආහාර හා මියුරු සංගීතය" }
+      title: { en: "Guest Arrival & Welcome", si: "අමුත්තන්ගේ පැමිණීම" },
+      desc: { en: "Welcome refreshments & gathering at Queen's Ballroom", si: "ක්වීන්ස් බෝල්රූම් ශාලාවට අමුත්තන් පිළිගැනීම" }
     },
     {
-      time: "7:00 PM",
-      timeSi: "ප.ව. 7:00",
+      time: "9:40 AM",
+      timeSi: "පෙ.ව. 9:40",
       icon: "dance",
-      title: { en: "Grand Entrance & First Dance", si: "යුවලගේ ප්‍රවේශය හා පළමු නැටුම" },
-      desc: { en: "Toast with the newlyweds", si: "අභිනව යුවල පිළිගැනීම සහ ප්‍රීතිමත් සුබපැතුම්" }
+      title: { en: "Poruwa Ceremony", si: "පෝරුවේ චාරිත්‍ර" },
+      desc: { en: "Auspicious Poruwa rituals & sacred union of vows", si: "සුබ මුහුර්තයෙන් පෝරුවේ චාරිත්‍ර ආරම්භය" }
     },
     {
-      time: "8:00 PM",
-      timeSi: "ප.ව. 8:00",
+      time: "10:45 AM",
+      timeSi: "පෙ.ව. 10:45",
       icon: "dinner",
-      title: { en: "Gala Dinner", si: "රාත්‍රී භෝජන සංග්‍රහය" },
-      desc: { en: "Four-course gourmet banquet", si: "විශේෂිත රසවත් මංගල භෝජන සංග්‍රහය" }
+      title: { en: "Traditional Tea & Kiribath", si: "සාම්ප්‍රදායික තේ පැන් සංග්‍රහය" },
+      desc: { en: "Kiribath, Sri Lankan traditional sweetmeats & tea", si: "කිරිබත් සහ සාම්ප්‍රදායික රසකැවිලි සංග්‍රහය" }
     },
     {
-      time: "9:30 PM",
-      timeSi: "ප.ව. 9:30",
+      time: "11:30 AM",
+      timeSi: "පෙ.ව. 11:30",
       icon: "party",
-      title: { en: "Party & Dancing", si: "සංගීතය සහ විනෝදය" },
-      desc: { en: "Live band, DJ and open bar", si: "සජීවී සංගීතය, ඩී.ජේ සහ ප්‍රීතිමත් නර්තනය" }
+      title: { en: "Grand Entrance & First Dance", si: "යුවලගේ ප්‍රවේශය හා පළමු නැටුම" },
+      desc: { en: "Newlyweds entrance, celebration & opening toasts", si: "අභිනව යුවල පිළිගැනීම සහ ප්‍රීතිමත් සුබපැතුම්" }
     },
     {
-      time: "2:00 AM",
-      timeSi: "පෙ.ව. 2:00",
+      time: "12:30 PM",
+      timeSi: "ප.ව. 12:30",
+      icon: "dinner",
+      title: { en: "Wedding Luncheon Banquet", si: "මංගල දිවා භෝජන සංග්‍රහය" },
+      desc: { en: "Grand celebratory buffet feast", si: "විශේෂිත රසවත් මංගල දිවා භෝජන සංග්‍රහය" }
+    },
+    {
+      time: "1:45 PM",
+      timeSi: "ප.ව. 1:45",
+      icon: "party",
+      title: { en: "Music & Celebration", si: "සංගීතය සහ ප්‍රීතිමත් නර්තනය" },
+      desc: { en: "Live melodies, dancing and joyous moments", si: "සජීවී සංගීතය සහ ප්‍රීතිමත් නර්තනය" }
+    },
+    {
+      time: "3:30 PM",
+      timeSi: "ප.ව. 3:30",
       icon: "sparkler",
-      title: { en: "Sparkler Farewell", si: "ආදරණීය සමුගැනීම" },
-      desc: { en: "Send-off with sparklers of love", si: "දීප්තිමත් ආශිර්වාද මැද සමුගැනීම" }
+      title: { en: "Farewell & Send-off", si: "ආදරණීය සමුගැනීම" },
+      desc: { en: "Send-off with heartfelt love and blessings", si: "ආශිර්වාද මැද අභිනව යුවලගේ සමුගැනීම" }
     }
   ],
   dressCode: {
@@ -173,14 +199,6 @@ export const weddingData = {
       desc: {
         en: "Please follow coordinator guidelines and arrive early to cherish every moment.",
         si: "මංගල උත්සවයේ සියලු සුන්දර අවස්ථාවන් භුක්ති විඳීමට නියමිත වේලාවට පෙර පැමිණෙන්න."
-      }
-    },
-    {
-      icon: "child",
-      title: { en: "Adults Only", si: "වැඩිහිටියන් පමණයි" },
-      desc: {
-        en: "An adults-only celebration. While we adore your little ones, we hope you enjoy a wonderful night out.",
-        si: "මෙය වැඩිහිටියන් වෙනුවෙන් වෙන් වූ රාත්‍රියකි. ඔබ සැමට ප්‍රීතිමත් නිදහස් රාත්‍රියක් ගත කිරීමට ආරාධනා කරමු."
       }
     },
     {

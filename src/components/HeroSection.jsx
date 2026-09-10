@@ -1,10 +1,10 @@
 "use client";
 
 import styles from "./HeroSection.module.css";
-import { Sparkles } from "lucide-react";
+import { Sparkles, MapPin, Clock } from "lucide-react";
 
 export default function HeroSection({ weddingData, lang }) {
-  const { couple, date } = weddingData;
+  const { couple, date, location } = weddingData;
   const isSi = lang === "si";
   const heroImageSrc = couple.heroImage || "/images/couple_hero.jpg";
 
@@ -68,7 +68,28 @@ export default function HeroSection({ weddingData, lang }) {
 
           <div className={styles.weddingDatePill}>
             <span>
-              {date.day} · {isSi ? (date.monthSi || date.month).toUpperCase() : date.monthEn.toUpperCase()} · {date.year}
+              {isSi
+                ? (date.fullDate?.si || `${date.day} · ${(date.monthSi || date.month).toUpperCase()} · ${date.year}`)
+                : `${date.day} · ${date.monthEn.toUpperCase()} · ${date.year}`}
+            </span>
+          </div>
+
+          <div className={styles.weddingLocationPill}>
+            <MapPin size={13} className={styles.locationPinIcon} />
+            <span>
+              {isSi
+                ? (location?.nameSi || "රෝයල් රෙස්ට් හවුස්, පේරාදෙණිය")
+                : (location?.name || "Royal Rest House, Peradeniya")}
+            </span>
+          </div>
+
+          <div className={styles.weddingTimePill}>
+            <Clock size={13} className={styles.timeClockIcon} />
+            <span>
+              {isSi ? date.timeSpan?.si : date.timeSpan?.en}
+            </span>
+            <span className={styles.nekathBadge}>
+              {isSi ? `(${date.poruwaTime?.si})` : `(${date.poruwaTime?.en})`}
             </span>
           </div>
         </div>

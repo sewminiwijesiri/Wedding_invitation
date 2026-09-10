@@ -9,7 +9,6 @@ import CountdownCalendar from "@/components/CountdownCalendar";
 import EventDetails from "@/components/EventDetails";
 import ItineraryTimeline from "@/components/ItineraryTimeline";
 import PhotoGallery from "@/components/PhotoGallery";
-import DressCode from "@/components/DressCode";
 import RsvpForm from "@/components/RsvpForm";
 import Recommendations from "@/components/Recommendations";
 import GoldPetals from "@/components/GoldPetals";
@@ -60,9 +59,6 @@ export default function WeddingPage() {
 
         {/* Romantic Photo Break */}
         <PhotoGallery weddingData={weddingData} lang={lang} />
-
-        {/* Dress Code & Palette Guide */}
-        <DressCode weddingData={weddingData} lang={lang} />
 
         {/* Interactive RSVP Form with Confetti */}
         <RsvpForm weddingData={weddingData} lang={lang} />

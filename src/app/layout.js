@@ -1,13 +1,15 @@
+
+
 import "./globals.css";
 
 export const metadata = {
   metadataBase: new URL("https://yasas-sanduni.wedding"),
   title: "Yasas & Sanduni | Wedding Invitation",
-  description: "Join us in celebrating the wedding of Yasas & Sanduni on Friday, October 16, 2026. Schedule, venue details, dress code, and RSVP.",
-  keywords: "wedding, wedding invitation, Yasas and Sanduni, luxury wedding, ceremony, reception, Sri Lanka wedding",
+  description: "Join us in celebrating the wedding of Yasas & Sanduni on Friday, October 16, 2026 from 9:30 AM to 3:30 PM (Poruwa Ceremony at 9:40 AM) at Royal Rest House, Peradeniya (Queen's Ballroom Hall).",
+  keywords: "wedding, wedding invitation, Yasas and Sanduni, Poruwa ceremony, luxury wedding, ceremony, reception, Sri Lanka wedding, Royal Rest House Peradeniya, Queens Ballroom Hall",
   openGraph: {
     title: "Yasas & Sanduni | Our Wedding Invitation",
-    description: "You are cordially invited to celebrate our wedding on Friday, October 16, 2026.",
+    description: "You are cordially invited to celebrate our wedding on Friday, October 16, 2026 (9:30 AM – 3:30 PM) at Royal Rest House, Peradeniya.",
     images: [
       {
         url: "/images/couple_hero.jpg",

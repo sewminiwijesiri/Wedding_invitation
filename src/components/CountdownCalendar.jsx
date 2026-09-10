@@ -82,7 +82,7 @@ export default function CountdownCalendar({ weddingData, lang }) {
         : `Ceremony: ${weddingData.events[0].venue} (${weddingData.events[0].time})\nReception: ${weddingData.events[1].venue} (${weddingData.events[1].time})`
     );
     const location = encodeURIComponent(`${weddingData.events[0].venue}, ${weddingData.events[0].address}`);
-    const dates = "20261016T163000/20261017T020000";
+    const dates = "20261016T093000/20261016T153000";
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;
   };
 

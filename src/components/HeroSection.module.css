@@ -180,6 +180,64 @@
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
+.weddingLocationPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 6px 18px;
+  background: rgba(18, 14, 10, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #F8EFE0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.locationPinIcon {
+  color: var(--gold-primary);
+  flex-shrink: 0;
+}
+
+.weddingTimePill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+  padding: 6px 18px;
+  background: rgba(14, 11, 8, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: #FFF8EB;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.timeClockIcon {
+  color: var(--gold-light);
+  flex-shrink: 0;
+}
+
+.nekathBadge {
+  color: #F8DA89;
+  font-weight: 600;
+}
+
 /* Parent Blessing Banner */
 .blessingCard {
   margin: 30px 20px 0;
@@ -232,5 +290,18 @@
     padding: 7px 18px;
     font-size: 0.72rem;
     letter-spacing: 2.5px;
+  }
+
+  .weddingLocationPill {
+    padding: 5px 14px;
+    font-size: 0.66rem;
+    letter-spacing: 1.5px;
+  }
+
+  .weddingTimePill {
+    padding: 5px 12px;
+    font-size: 0.65rem;
+    letter-spacing: 0.5px;
+    line-height: 1.35;
   }
 }

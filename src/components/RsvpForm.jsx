@@ -2,15 +2,13 @@
 
 import { useState, useEffect } from "react";
 import styles from "./RsvpForm.module.css";
-import { MailCheck, Send, CheckCircle, RefreshCw, Heart } from "lucide-react";
+import { MailCheck, Send, CheckCircle, RefreshCw, Heart, Plus, Minus } from "lucide-react";
 
 export default function RsvpForm({ weddingData, lang }) {
   const [formData, setFormData] = useState({
     name: "",
     attending: "yes",
     guests: "1",
-    diet: "none",
-    song: "",
     message: ""
   });
 
@@ -159,53 +157,52 @@ export default function RsvpForm({ weddingData, lang }) {
 
           {formData.attending === "yes" && (
             <>
-              {/* Number of guests */}
+              {/* Number of guests stepper */}
               <div className={styles.inputGroup}>
                 <label className={styles.label}>
                   {lang === "si" ? "සහභාගී වන සංඛ්‍යාව" : "Number of Guests"}
                 </label>
-                <select
-                  value={formData.guests}
-                  onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
-                  className={styles.selectInput}
-                >
-                  <option value="1">1 {lang === "si" ? "දෙනෙක්" : "Guest"}</option>
-                  <option value="2">2 {lang === "si" ? "දෙනෙක්" : "Guests"}</option>
-                  <option value="3">3 {lang === "si" ? "දෙනෙක්" : "Guests"}</option>
-                  <option value="4">4 {lang === "si" ? "දෙනෙක්" : "Guests"}</option>
-                </select>
-              </div>
+                <div className={styles.counterBox}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const current = parseInt(formData.guests, 10) || 1;
+                      if (current > 1) {
+                        setFormData({ ...formData, guests: String(current - 1) });
+                      }
+                    }}
+                    className={styles.counterBtn}
+                    aria-label={lang === "si" ? "අඩු කරන්න" : "Decrease guests"}
+                    disabled={parseInt(formData.guests, 10) <= 1}
+                  >
+                    <Minus size={16} strokeWidth={2.2} />
+                  </button>
 
-              {/* Dietary */}
-              <div className={styles.inputGroup}>
-                <label className={styles.label}>
-                  {lang === "si" ? "ආහාර මනාපයන් / රුචිකත්වය" : "Dietary Restrictions"}
-                </label>
-                <select
-                  value={formData.diet}
-                  onChange={(e) => setFormData({ ...formData, diet: e.target.value })}
-                  className={styles.selectInput}
-                >
-                  <option value="none">{lang === "si" ? "සාමාන්‍ය ආහාර වේල" : "None / Standard Menu"}</option>
-                  <option value="vegetarian">{lang === "si" ? "එළවළු පමණක් (Vegetarian)" : "Vegetarian"}</option>
-                  <option value="vegan">{lang === "si" ? "වීගන් (Vegan)" : "Vegan"}</option>
-                  <option value="gluten-free">{lang === "si" ? "ග්ලූටන් රහිත (Gluten-Free)" : "Gluten-Free"}</option>
-                  <option value="other">{lang === "si" ? "වෙනත් විශේෂ ආහාර අවශ්‍යතාවක්" : "Other allergy"}</option>
-                </select>
-              </div>
+                  <div className={styles.counterDisplay}>
+                    <span className={styles.counterNumber}>{formData.guests}</span>
+                    <span className={styles.counterLabel}>
+                      {lang === "si"
+                        ? "දෙනෙක්"
+                        : parseInt(formData.guests, 10) === 1
+                        ? "Guest"
+                        : "Guests"}
+                    </span>
+                  </div>
 
-              {/* Song request */}
-              <div className={styles.inputGroup}>
-                <label className={styles.label}>
-                  {lang === "si" ? "ඔබ ප්‍රියකරන මංගල ගීතය" : "Song to get you dancing"}
-                </label>
-                <input
-                  type="text"
-                  placeholder={lang === "si" ? "ගීතයේ නම සහ ගායකයා" : "Title and artist"}
-                  value={formData.song}
-                  onChange={(e) => setFormData({ ...formData, song: e.target.value })}
-                  className={styles.textInput}
-                />
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const current = parseInt(formData.guests, 10) || 1;
+                      if (current < 20) {
+                        setFormData({ ...formData, guests: String(current + 1) });
+                      }
+                    }}
+                    className={styles.counterBtn}
+                    aria-label={lang === "si" ? "වැඩි කරන්න" : "Increase guests"}
+                  >
+                    <Plus size={16} strokeWidth={2.2} />
+                  </button>
+                </div>
               </div>
             </>
           )}
