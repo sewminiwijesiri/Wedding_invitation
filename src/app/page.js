@@ -8,7 +8,6 @@ import MusicPlayer from "@/components/MusicPlayer";
 import CountdownCalendar from "@/components/CountdownCalendar";
 import EventDetails from "@/components/EventDetails";
 import ItineraryTimeline from "@/components/ItineraryTimeline";
-import PhotoGallery from "@/components/PhotoGallery";
 import RsvpForm from "@/components/RsvpForm";
 import Recommendations from "@/components/Recommendations";
 import GoldPetals from "@/components/GoldPetals";
@@ -57,9 +56,6 @@ export default function WeddingPage() {
         {/* Activities Itinerary Timeline */}
         <ItineraryTimeline weddingData={weddingData} lang={lang} />
 
-        {/* Romantic Photo Break */}
-        <PhotoGallery weddingData={weddingData} lang={lang} />
-
         {/* Interactive RSVP Form with Confetti */}
         <RsvpForm weddingData={weddingData} lang={lang} />
 
@@ -68,13 +64,15 @@ export default function WeddingPage() {
 
         {/* Refined Footer */}
         <footer style={{
-          padding: "30px 20px 80px",
+          padding: "36px 20px 80px",
           textAlign: "center",
-          background: "#E8DFD1",
-          borderTop: "1px solid rgba(212, 175, 55, 0.35)"
+          background: "rgba(235, 226, 213, 0.35)",
+          borderTop: "1px solid rgba(182, 155, 126, 0.2)"
         }}>
-          <div className="monogram-badge" style={{ width: "44px", height: "44px", fontSize: "1rem", marginBottom: "12px" }}>
-            {weddingData.couple.monogram}
+          <div className="monogram-split" style={{ marginBottom: "14px" }}>
+            <span className="monogram-split-initial">Y</span>
+            <span className="monogram-split-bar" />
+            <span className="monogram-split-initial">S</span>
           </div>
 
           <p style={{

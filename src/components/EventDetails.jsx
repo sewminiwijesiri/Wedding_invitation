@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import styles from "./EventDetails.module.css";
-import { Church, Wine, MapPin, ExternalLink, Check, Crown } from "lucide-react";
+import { MapPin, ExternalLink, Check, Heart } from "lucide-react";
 
 export default function EventDetails({ weddingData, lang }) {
   const [copied, setCopied] = useState(false);
@@ -25,31 +25,33 @@ export default function EventDetails({ weddingData, lang }) {
 
   return (
     <section className={styles.eventSection}>
-      {/* Event Details Cards */}
-      {events.map((evt) => (
-        <div key={evt.id} className={styles.eventCard}>
-          <div className={styles.iconWrapper}>
-            {evt.type === "religious" || evt.type === "church" ? (
-              <Church size={26} strokeWidth={1.5} />
-            ) : evt.type === "ceremony" ? (
-              <Crown size={26} strokeWidth={1.5} />
-            ) : (
-              <Wine size={26} strokeWidth={1.5} />
+      {/* Section Header */}
+      <div className={styles.sectionHeader}>
+        <p className={styles.sectionKicker}>
+          {isSi ? "මංගල උත්සවය" : "THE CEREMONY & RECEPTION"}
+        </p>
+      </div>
+
+      {/* Simplified Events Flow */}
+      <div className={styles.eventsList}>
+        {events.map((evt, idx) => (
+          <div key={evt.id} className={styles.eventItem}>
+            <h3 className={styles.eventTitle}>{evt.title[lang]}</h3>
+            <p className={styles.eventTime}>{isSi ? (evt.timeSi || evt.time) : evt.time}</p>
+            <p className={styles.eventNote}>{evt.note[lang]}</p>
+            {idx < events.length - 1 && (
+              <div className={styles.heartDivider}>
+                <Heart size={15} fill="#B69B7E" color="#B69B7E" strokeWidth={0} />
+              </div>
             )}
           </div>
+        ))}
+      </div>
 
-          <h3 className={styles.eventTitle}>{evt.title[lang]}</h3>
-          <p className={styles.eventTime}>{isSi ? (evt.timeSi || evt.time) : evt.time}</p>
-          <h4 className={styles.venueName}>{isSi ? (evt.venueSi || evt.venue) : evt.venue}</h4>
-          <p className={styles.eventNote}>{evt.note[lang]}</p>
-        </div>
-      ))}
+      <div className={styles.venueDivider} />
 
-      {/* Single Unified Venue & Location Map Card */}
-      <div className={styles.venueMapCard}>
-        <div className={styles.mapPinBadge}>
-          <MapPin size={22} />
-        </div>
+      {/* Single Unified Venue & Location Map */}
+      <div className={styles.venueContainer}>
 
         <p className={styles.venueSectionTitle}>
           {isSi ? "මංගල ස්ථානය සහ සිතියම" : "WEDDING VENUE & MAP"}
@@ -79,7 +81,7 @@ export default function EventDetails({ weddingData, lang }) {
             className="btn-outline-gold"
             onClick={() => handleCopyAddress(`${hallName}, ${hotelName}, ${addressText}`)}
           >
-            {copied ? <Check size={14} /> : <MapPin size={14} />}
+            {copied ? <Check size={13} /> : <MapPin size={13} />}
             <span>
               {copied
                 ? (isSi ? "පිටපත් විය!" : "Copied!")
@@ -94,7 +96,7 @@ export default function EventDetails({ weddingData, lang }) {
             className="btn-gold"
           >
             <span>{isSi ? "සිතියම විවෘත කරන්න" : "Open in Maps"}</span>
-            <ExternalLink size={14} />
+            <ExternalLink size={13} />
           </a>
         </div>
       </div>

@@ -10,11 +10,13 @@
 }
 
 .dressCodeTitle {
-  font-family: var(--font-script);
-  font-size: 2.8rem;
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
   color: var(--text-black);
-  line-height: 1.1;
-  margin-bottom: 2px;
+  line-height: 1.2;
+  margin-bottom: 4px;
 }
 
 .dressCodeType {

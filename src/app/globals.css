@@ -1,42 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@200;300;400;500;600;700&family=Noto+Serif+Sinhala:wght@300;400;500;600;700&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@200;300;400;500;600;700&family=Noto+Serif+Sinhala:wght@300;400;500;600;700&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap');
 
 :root {
-  /* Luxury Beige & Gold Palette */
+  /* Luxury Curated Beige & Neutral Palette */
   --bg-sand: #F7F4EE;
-  --bg-warm-beige: #F1ECE3;
-  --bg-olive-beige: #DFD7C7;
-  --bg-creamy: #FAF8F5;
-  --card-white: #FFFFFF;
-  --card-ivory: #FCFAF7;
+  --bg-warm-beige: #F4EFE6;
+  --bg-olive-beige: #E6DDCF;
+  --bg-creamy: #FAF8F4;
+  --card-white: #FAF7F2;
+  --card-ivory: #F8F4ED;
+  --card-beige: #F1ECE2;
 
-  /* Gold Metallics */
-  --gold-primary: #D4AF37;
-  --gold-light: #F4E299;
-  --gold-champagne: #ECC87A;
-  --gold-dark: #A67C1E;
-  --gold-metallic: linear-gradient(135deg, #ECC87A 0%, #D4AF37 45%, #AA7D1E 100%);
-  --gold-metallic-hover: linear-gradient(135deg, #FFF0B8 0%, #E5C058 50%, #BD8C24 100%);
-  --gold-border: rgba(212, 175, 55, 0.4);
-  --gold-glow: 0 8px 32px rgba(212, 175, 55, 0.22);
-  --gold-wax: radial-gradient(circle at 35% 35%, #DDA83A 0%, #B8860B 65%, #7D5906 100%);
+  /* Sophisticated Warm Champagne / Taupe Accents (harmonious beige tones) */
+  --gold-primary: #B69B7E;
+  --gold-light: #E8DFD2;
+  --gold-champagne: #D4C4AE;
+  --gold-dark: #7A634E;
+  --gold-metallic: linear-gradient(135deg, #D4C3AC 0%, #BAA082 48%, #9E8365 100%);
+  --gold-metallic-hover: linear-gradient(135deg, #E2D4C1 0%, #C7AF93 50%, #AB9073 100%);
+  --gold-border: rgba(182, 155, 126, 0.32);
+  --gold-glow: 0 8px 30px rgba(182, 155, 126, 0.18);
+  --gold-wax: radial-gradient(circle at 35% 35%, #C9B59D 0%, #A99075 65%, #7D654E 100%);
 
-  /* Minimal Crisp Black & Charcoal Accents */
-  --text-black: #1A1A1A;
-  --text-charcoal: #2C2C2C;
-  --text-muted: #6B655B;
-  --text-gold: #B38F2B;
-  --border-subtle: rgba(180, 160, 130, 0.2);
+  /* Warm Espresso & Roasted Charcoal Typography */
+  --text-black: #251E17;
+  --text-charcoal: #3D3328;
+  --text-muted: #6E6152;
+  --text-gold: #826A53;
+  --border-subtle: rgba(160, 135, 105, 0.2);
 
-  /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 8px 24px rgba(90, 75, 55, 0.08);
-  --shadow-luxury: 0 16px 40px rgba(70, 55, 35, 0.12), 0 2px 6px rgba(212, 175, 55, 0.15);
-  --shadow-envelope: 0 24px 60px rgba(50, 40, 30, 0.18);
+  /* Shadows with warm undertones */
+  --shadow-sm: 0 2px 10px rgba(70, 55, 35, 0.04);
+  --shadow-md: 0 8px 24px rgba(70, 55, 35, 0.07);
+  --shadow-luxury: 0 16px 40px rgba(60, 45, 25, 0.1), 0 2px 6px rgba(182, 155, 126, 0.12);
+  --shadow-envelope: 0 24px 60px rgba(50, 40, 30, 0.16);
 
   /* Typography */
   --font-serif: 'Cormorant Garamond', 'Noto Serif Sinhala', Georgia, serif;
   --font-sans: 'Montserrat', 'Noto Serif Sinhala', system-ui, -apple-system, sans-serif;
-  --font-script: 'Pinyon Script', 'Noto Serif Sinhala', cursive;
+  --font-script: 'Cormorant Garamond', 'Noto Serif Sinhala', Georgia, serif;
+  --font-signature: 'Alex Brush', 'Great Vibes', cursive;
   --font-sinhala: 'Noto Serif Sinhala', 'Iskoola Pota', serif;
 
   /* Transitions */
@@ -55,10 +57,10 @@ html {
 }
 
 body {
-  background-color: #ECE5DA;
+  background-color: #EDE6DC;
   background-image: 
-    radial-gradient(at 15% 15%, rgba(212, 175, 55, 0.06) 0px, transparent 60%),
-    radial-gradient(at 85% 85%, rgba(180, 150, 110, 0.08) 0px, transparent 60%);
+    radial-gradient(at 15% 15%, rgba(182, 155, 126, 0.08) 0px, transparent 60%),
+    radial-gradient(at 85% 85%, rgba(160, 135, 105, 0.08) 0px, transparent 60%);
   color: var(--text-black);
   font-family: var(--font-sans);
   line-height: 1.6;
@@ -86,10 +88,10 @@ body {
 .invitation-wrapper {
   width: 100%;
   max-width: 480px;
-  background-color: var(--bg-warm-beige);
-  border-radius: 20px;
+  background-color: var(--card-ivory);
+  border-radius: 24px;
   box-shadow: var(--shadow-luxury);
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  border: 1px solid rgba(182, 155, 126, 0.32);
   overflow: hidden;
   position: relative;
   transition: var(--transition-smooth);
@@ -103,9 +105,9 @@ body {
   }
 }
 
-/* Shimmer & Gold Foil Effects */
+/* Shimmer & Warm Champagne Foil Effects */
 .gold-text-shimmer {
-  background: linear-gradient(90deg, #A67C1E 0%, #ECC87A 30%, #D4AF37 50%, #ECC87A 70%, #A67C1E 100%);
+  background: linear-gradient(90deg, #7A634E 0%, #D4C3AC 30%, #BAA082 50%, #D4C3AC 70%, #7A634E 100%);
   background-size: 200% auto;
   color: transparent;
   -webkit-background-clip: text;
@@ -128,27 +130,34 @@ body {
   position: absolute;
   inset: -1px;
   border-radius: inherit;
-  border: 1px solid rgba(212, 175, 55, 0.45);
+  border: 1px solid rgba(182, 155, 126, 0.4);
   pointer-events: none;
 }
 
-/* Monogram Badge */
-.monogram-badge {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: var(--gold-metallic);
-  display: flex;
+/* Monogram Initials Split matching reference image */
+.monogram-split {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #1A1A1A;
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: 1.4rem;
-  letter-spacing: 2px;
-  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.4);
-  border: 2px solid #FFF8E1;
-  margin: 0 auto;
+  gap: 12px;
+  user-select: none;
+}
+
+.monogram-split-initial {
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--text-black);
+  letter-spacing: 1px;
+}
+
+.monogram-split-bar {
+  width: 1.5px;
+  height: 28px;
+  background: var(--text-black);
+  opacity: 0.75;
+  display: inline-block;
 }
 
 /* Calligraphy & Serif Typography */
@@ -167,7 +176,7 @@ body {
 /* Buttons */
 .btn-gold {
   background: var(--gold-metallic);
-  color: #111111;
+  color: #241E17;
   font-family: var(--font-sans);
   font-size: 0.78rem;
   font-weight: 600;
@@ -175,8 +184,8 @@ body {
   text-transform: uppercase;
   padding: 13px 28px;
   border-radius: 30px;
-  border: 1px solid rgba(255, 248, 225, 0.7);
-  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.35);
+  border: 1px solid rgba(250, 247, 242, 0.6);
+  box-shadow: 0 4px 16px rgba(182, 155, 126, 0.3);
   cursor: pointer;
   transition: var(--transition-smooth);
   display: inline-flex;
@@ -188,7 +197,7 @@ body {
 
 .btn-gold:hover {
   background: var(--gold-metallic-hover);
-  box-shadow: 0 6px 22px rgba(212, 175, 55, 0.5);
+  box-shadow: 0 6px 22px rgba(182, 155, 126, 0.45);
   transform: translateY(-2px);
 }
 
@@ -217,16 +226,16 @@ body {
 }
 
 .btn-outline-gold:hover {
-  background: rgba(212, 175, 55, 0.12);
+  background: rgba(182, 155, 126, 0.12);
   border-color: var(--gold-dark);
-  color: #000000;
+  color: #1A140E;
   transform: translateY(-1px);
 }
 
 /* Card Sections */
 .section-card {
   background: var(--card-ivory);
-  border: 1px solid rgba(212, 175, 55, 0.25);
+  border: 1px solid rgba(182, 155, 126, 0.25);
   border-radius: 16px;
   padding: 32px 24px;
   margin: 20px 16px;
@@ -301,6 +310,6 @@ body {
   background: #F1ECE3;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D4AF37;
+  background: #BAA082;
   border-radius: 3px;
 }

@@ -1,45 +1,83 @@
 .countdownCard {
-  margin: 20px 20px 26px;
-  background: linear-gradient(180deg, #E6DDCF 0%, #DDD2C0 100%);
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  border-radius: 18px;
-  padding: 30px 20px;
-  box-shadow: 0 10px 28px rgba(70, 55, 35, 0.12);
+  margin: 0;
+  background: rgba(235, 226, 213, 0.28);
+  border: none;
+  border-bottom: 1px solid rgba(182, 155, 126, 0.2);
+  border-radius: 0;
+  padding: 36px 20px 32px;
+  box-shadow: none;
   text-align: center;
   position: relative;
   overflow: hidden;
 }
 
-.dateHeaderRow {
+/* Editorial Date Display matching user reference Image 1 */
+.editorialDateBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 30px;
+  max-width: 360px;
+  width: 100%;
+}
+
+.dateMonthName {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 4.5px;
+  text-transform: uppercase;
+  color: var(--text-charcoal);
+  margin: 0 0 -4px 0;
+  text-align: center;
+}
+
+.dateWingsRow {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
   gap: 12px;
-  margin-bottom: 24px;
 }
 
-.headerLine {
+.dateWing {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+}
+
+.wingLine {
+  width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6), transparent);
+  background: rgba(182, 155, 126, 0.45);
 }
 
-.dateBadge {
+.wingText {
   font-family: var(--font-serif);
-  font-size: 1.15rem;
-  letter-spacing: 4px;
+  font-size: 0.92rem;
   font-weight: 600;
-  color: #262420;
+  letter-spacing: 3px;
   text-transform: uppercase;
+  color: var(--text-black);
+  margin: auto 0;
+  text-align: center;
+  white-space: nowrap;
 }
 
-.dayNumber {
-  font-family: var(--font-script);
-  font-size: 2.8rem;
+.centerDayNumber {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 3.8rem;
+  font-weight: 400;
+  line-height: 0.9;
   color: var(--gold-dark);
-  line-height: 0.8;
-  margin: 0 6px;
-  display: inline-block;
+  padding: 0 4px;
+  flex-shrink: 0;
+  transform: translateY(-2px);
 }
 
 /* Countdown Clock */
@@ -48,7 +86,7 @@
   font-size: 0.72rem;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: #595143;
+  color: var(--text-muted);
   margin-bottom: 12px;
   font-weight: 600;
 }
@@ -66,19 +104,19 @@
   flex-direction: column;
   align-items: center;
   min-width: 58px;
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(6px);
   padding: 10px 6px 8px;
   border-radius: 10px;
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(182, 155, 126, 0.28);
+  box-shadow: 0 4px 10px rgba(60, 45, 30, 0.04);
 }
 
 .timeDigit {
   font-family: var(--font-serif);
   font-size: 1.8rem;
   font-weight: 700;
-  color: #1A1A1A;
+  color: var(--text-black);
   line-height: 1;
   font-variant-numeric: tabular-nums;
 }
@@ -88,7 +126,7 @@
   font-size: 0.6rem;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #706859;
+  color: var(--text-muted);
   margin-top: 4px;
   font-weight: 500;
 }
@@ -104,7 +142,7 @@
 /* Calendar Section */
 .calendarDivider {
   height: 1px;
-  background: rgba(212, 175, 55, 0.35);
+  background: rgba(182, 155, 126, 0.25);
   margin: 20px 0 24px;
 }
 
@@ -122,7 +160,7 @@
   font-family: var(--font-serif);
   font-style: italic;
   font-size: 1.25rem;
-  color: #4A4234;
+  color: var(--text-charcoal);
   margin-bottom: 16px;
 }
 
@@ -138,7 +176,7 @@
   font-size: 0.62rem;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #787060;
+  color: var(--text-muted);
   padding: 6px 0;
   font-weight: 600;
 }
@@ -150,7 +188,7 @@
   vertical-align: middle;
   font-family: var(--font-sans);
   font-size: 0.78rem;
-  color: #38342D;
+  color: var(--text-charcoal);
 }
 
 .emptyCell {
@@ -165,7 +203,7 @@
   height: 32px;
   position: relative;
   font-weight: 700;
-  color: #111111;
+  color: var(--text-black);
 }
 
 .heartRing {
@@ -182,4 +220,18 @@
 
 .calendarActions {
   margin-top: 18px;
+}
+
+@media (max-width: 420px) {
+  .centerDayNumber {
+    font-size: 3.2rem;
+  }
+  .wingText {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+  }
+  .dateMonthName {
+    font-size: 0.85rem;
+    letter-spacing: 3.5px;
+  }
 }

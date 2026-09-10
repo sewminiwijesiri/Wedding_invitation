@@ -2,306 +2,183 @@
   position: relative;
   text-align: center;
   overflow: visible;
-  padding-bottom: 20px;
+  padding-bottom: 0;
 }
 
-/* Header Crest / Envelope Flap Style with Photo Background */
-.topFlapCard {
+/* Editorial Photo Card matching reference image */
+.editorialPhotoCard {
   position: relative;
-  min-height: 540px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 44px 20px 38px;
-  background-size: cover;
-  background-position: center 20%;
-  background-repeat: no-repeat;
-  border-bottom: 2px solid rgba(212, 175, 55, 0.55);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.22);
-  overflow: visible;
-}
-
-/* Decorative Envelope Flap Pointer at the bottom */
-.topFlapCard::after {
-  content: '';
-  position: absolute;
-  bottom: -11px;
-  left: 50%;
-  transform: translateX(-50%) rotate(45deg);
-  width: 22px;
-  height: 22px;
-  background: #0E0B08;
-  border-right: 2px solid rgba(212, 175, 55, 0.65);
-  border-bottom: 2px solid rgba(212, 175, 55, 0.65);
-  z-index: 3;
-}
-
-/* Gold Corner Stationery Brackets */
-.goldCornerTopLeft,
-.goldCornerTopRight {
-  position: absolute;
-  width: 28px;
-  height: 28px;
-  pointer-events: none;
-  border-color: rgba(240, 215, 150, 0.75);
-  z-index: 2;
-}
-
-.goldCornerTopLeft {
-  top: 14px;
-  left: 14px;
-  border-top: 2px solid;
-  border-left: 2px solid;
-}
-
-.goldCornerTopRight {
-  top: 14px;
-  right: 14px;
-  border-top: 2px solid;
-  border-right: 2px solid;
-}
-
-/* Top Monogram Seal & Invitation Tag */
-.topHeaderContent {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.monogramHeartWrapper {
-  position: relative;
-  width: 76px;
-  height: 70px;
-  margin: 0 auto 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-  cursor: default;
-}
-
-.monogramHeartWrapper:hover {
-  transform: scale(1.08);
-}
-
-.monogramHeartSvg {
   width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: visible;
-  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.5));
+  min-height: 660px;
+  height: 82vh;
+  max-height: 750px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 24px 18px 40px;
+  background-size: cover;
+  background-position: center 25%;
+  background-repeat: no-repeat;
+  border-radius: 24px 24px 0 0;
+  overflow: hidden;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.25);
 }
 
-.monogramHeartText {
+/* Centered Romantic Typography Stack */
+.photoOverlayContent {
   position: relative;
   z-index: 3;
-  color: #1A1712;
-  font-family: var(--font-serif);
-  font-size: 1.15rem;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-  transform: translateY(-3px);
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
-  pointer-events: none;
-  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 22px;
+  text-align: center;
 }
 
-.invitationTag {
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
+/* Pre-header Tagline: "WE'RE GETTING MARRIED" */
+.weddingTagline {
+  font-family: var(--font-serif);
+  font-size: 0.88rem;
   letter-spacing: 4.5px;
   text-transform: uppercase;
-  color: #F0DFC0;
-  margin: 0;
-  font-weight: 600;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6);
+  color: #F8EFE4;
+  margin: 0 0 8px 0;
+  font-weight: 500;
+  text-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.8),
+    0 1px 2px rgba(0, 0, 0, 0.95);
 }
 
-/* Bottom Names & Date Group */
-.bottomHeaderContent {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
+/* Couple Names in Flowing Signature Script: "Yasas & Sanduni" */
 .coupleNames {
-  font-family: var(--font-script);
-  font-size: 3.8rem;
-  line-height: 1.02;
+  font-family: var(--font-signature);
+  font-size: clamp(2.9rem, 7.8vw, 4.1rem);
+  font-weight: 400;
+  line-height: 1.05;
   color: #FFFFFF;
-  margin: 0 0 16px;
-  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.9), 0 0 28px rgba(0, 0, 0, 0.6);
+  margin: 0 0 10px 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: baseline;
+  justify-content: center;
+  gap: 12px;
+  white-space: nowrap;
+  text-shadow: 
+    0 3px 16px rgba(0, 0, 0, 0.85),
+    0 1px 4px rgba(0, 0, 0, 0.95);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
 }
 
-.coupleNamesSi {
-  font-family: var(--font-serif), var(--font-sans);
-  font-size: 2.6rem;
-  font-weight: 700;
-  letter-spacing: 1px;
+.firstName,
+.secondName {
+  font-family: var(--font-signature);
+  color: #FFFFFF;
 }
 
 .ampersand {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 2.3rem;
-  color: #F5DE9C;
-  display: block;
-  margin: -4px 0 -2px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+  font-weight: 300;
+  font-size: 2.1rem;
+  color: rgba(255, 255, 255, 0.95);
+  transform: translateY(-2px);
+  margin: 0 2px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
-.weddingDatePill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 24px;
-  background: rgba(18, 14, 10, 0.72);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 25px;
-  border: 1px solid rgba(212, 175, 55, 0.65);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-  font-family: var(--font-sans);
-  font-size: 0.78rem;
-  letter-spacing: 3.5px;
+.coupleNamesSi {
+  font-family: var(--font-serif), var(--font-sinhala);
+  font-size: clamp(1.8rem, 5.2vw, 2.3rem);
   font-weight: 600;
-  color: #FFF8EB;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.8px;
+  white-space: normal;
 }
 
-.weddingLocationPill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 10px;
-  padding: 6px 18px;
-  background: rgba(18, 14, 10, 0.72);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px solid rgba(212, 175, 55, 0.45);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
-  letter-spacing: 2px;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: #F8EFE0;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
-}
-
-.locationPinIcon {
-  color: var(--gold-primary);
-  flex-shrink: 0;
-}
-
-.weddingTimePill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 8px;
-  padding: 6px 18px;
-  background: rgba(14, 11, 8, 0.78);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px solid rgba(212, 175, 55, 0.5);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
-  letter-spacing: 1px;
-  font-weight: 500;
-  color: #FFF8EB;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
-}
-
-.timeClockIcon {
-  color: var(--gold-light);
-  flex-shrink: 0;
-}
-
-.nekathBadge {
-  color: #F8DA89;
-  font-weight: 600;
-}
-
-/* Parent Blessing Banner */
-.blessingCard {
-  margin: 30px 20px 0;
-  padding: 26px 22px;
-  background: #FCFAF7;
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  border-radius: 16px;
-  box-shadow: var(--shadow-sm);
-}
-
-.flourishIcon {
-  color: var(--gold-primary);
-  margin: 0 auto 10px;
-  display: block;
-}
-
-.blessingText {
+/* Minimalist Dotted Serif Date: "16.10.2026" */
+.weddingDateNum {
   font-family: var(--font-serif);
-  font-size: 1.12rem;
-  font-style: italic;
-  line-height: 1.6;
-  color: #38342D;
-  margin-bottom: 8px;
+  font-size: 1.45rem;
+  font-weight: 400;
+  letter-spacing: 3.5px;
+  color: #FBF8F2;
+  margin: 0 0 10px 0;
+  text-shadow: 
+    0 2px 10px rgba(0, 0, 0, 0.85),
+    0 1px 3px rgba(0, 0, 0, 0.95);
 }
 
-.parentNames {
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  font-weight: 600;
+/* Botanical Flourish */
+.flourishWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 6px;
 }
 
+.botanicalFlourish {
+  width: 130px;
+  height: 22px;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.75));
+}
+
+/* Torn Paper Deckle Edge overlay at the bottom */
+.tornPaperEdge {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 38px;
+  pointer-events: none;
+  z-index: 4;
+  line-height: 0;
+}
+
+.tornPaperSvg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: drop-shadow(0 -3px 5px rgba(0, 0, 0, 0.14));
+}
+
+/* Responsive adjustments */
 @media (max-width: 480px) {
-  .topFlapCard {
-    min-height: 500px;
-    padding: 38px 16px 34px;
+  .editorialPhotoCard {
+    min-height: 600px;
+    height: 78vh;
+    padding: 20px 14px 36px;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .weddingTagline {
+    font-size: 0.78rem;
+    letter-spacing: 3.5px;
+    margin-bottom: 6px;
   }
 
   .coupleNames {
-    font-size: 3.4rem;
+    font-size: clamp(2.4rem, 7.5vw, 3.2rem);
+    gap: 8px;
+    margin-bottom: 8px;
   }
 
-  .coupleNamesSi {
-    font-size: 2.3rem;
+  .ampersand {
+    font-size: 1.8rem;
   }
 
-  .weddingDatePill {
-    padding: 7px 18px;
-    font-size: 0.72rem;
-    letter-spacing: 2.5px;
+  .weddingDateNum {
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
   }
 
-  .weddingLocationPill {
-    padding: 5px 14px;
-    font-size: 0.66rem;
-    letter-spacing: 1.5px;
+  .botanicalFlourish {
+    width: 110px;
+    height: 19px;
   }
 
-  .weddingTimePill {
-    padding: 5px 12px;
-    font-size: 0.65rem;
-    letter-spacing: 0.5px;
-    line-height: 1.35;
+  .tornPaperEdge {
+    height: 32px;
   }
 }

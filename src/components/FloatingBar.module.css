@@ -7,24 +7,25 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  background: rgba(252, 250, 247, 0.88);
-  backdrop-filter: blur(12px);
+  background: rgba(246, 241, 233, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   padding: 8px 14px;
   border-radius: 40px;
-  border: 1px solid rgba(212, 175, 55, 0.45);
-  box-shadow: 0 8px 30px rgba(50, 40, 25, 0.2);
+  border: 1px solid rgba(182, 155, 126, 0.38);
+  box-shadow: 0 8px 30px rgba(50, 40, 25, 0.15);
   transition: var(--transition-smooth);
 }
 
 .floatingBarWrapper:hover {
   border-color: var(--gold-primary);
-  box-shadow: 0 10px 35px rgba(212, 175, 55, 0.35);
+  box-shadow: 0 10px 35px rgba(182, 155, 126, 0.28);
 }
 
 .langBtn {
   background: transparent;
-  border: 1px solid rgba(212, 175, 55, 0.5);
-  color: #1A1A1A;
+  border: 1px solid rgba(182, 155, 126, 0.45);
+  color: var(--text-black);
   font-family: var(--font-sans);
   font-size: 0.72rem;
   font-weight: 700;
@@ -39,12 +40,12 @@
 }
 
 .langBtn:hover {
-  background: rgba(212, 175, 55, 0.15);
+  background: rgba(182, 155, 126, 0.15);
 }
 
 .rsvpQuickBtn {
   background: var(--gold-metallic);
-  color: #111111;
+  color: #241E17;
   font-family: var(--font-sans);
   font-size: 0.72rem;
   font-weight: 700;
@@ -52,12 +53,12 @@
   text-transform: uppercase;
   padding: 8px 18px;
   border-radius: 20px;
-  border: 1px solid #FFF8E1;
+  border: 1px solid rgba(250, 247, 242, 0.6);
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 6px;
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35);
+  box-shadow: 0 4px 12px rgba(182, 155, 126, 0.3);
   transition: all 0.2s ease;
   text-decoration: none;
 }
@@ -68,9 +69,9 @@
 }
 
 .topBtn {
-  background: rgba(212, 175, 55, 0.15);
+  background: rgba(182, 155, 126, 0.15);
   border: none;
-  color: #1A1A1A;
+  color: var(--text-black);
   width: 34px;
   height: 34px;
   border-radius: 50%;
@@ -83,5 +84,6 @@
 
 .topBtn:hover {
   background: var(--gold-metallic);
+  color: #241E17;
   transform: translateY(-2px);
 }

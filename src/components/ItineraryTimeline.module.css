@@ -1,20 +1,23 @@
 .timelineCard {
-  margin: 10px 20px 26px;
-  background: #FCFAF7;
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  border-radius: 18px;
-  padding: 34px 20px;
-  box-shadow: 0 8px 24px rgba(90, 75, 55, 0.08);
+  margin: 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(182, 155, 126, 0.2);
+  border-radius: 0;
+  padding: 36px 20px 30px;
+  box-shadow: none;
   text-align: center;
   position: relative;
 }
 
 .timelineTitle {
-  font-family: var(--font-script);
-  font-size: 2.8rem;
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
   color: var(--text-black);
-  line-height: 1.1;
-  margin-bottom: 2px;
+  line-height: 1.2;
+  margin-bottom: 4px;
 }
 
 .timelineSubtitle {
@@ -43,7 +46,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 2px;
-  border-left: 2px dashed rgba(212, 175, 55, 0.5);
+  border-left: 2px dashed rgba(182, 155, 126, 0.38);
 }
 
 .timelineItem {
@@ -84,7 +87,7 @@
   font-family: var(--font-serif);
   font-size: 1.05rem;
   font-weight: 600;
-  color: #24221E;
+  color: var(--text-black);
   margin: 2px 0;
 }
 
@@ -100,9 +103,9 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #FCFAF7;
+  background: var(--card-ivory);
   border: 2px solid var(--gold-primary);
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
+  box-shadow: 0 4px 12px rgba(182, 155, 126, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -114,9 +117,9 @@
 }
 
 .timelineItem:hover .timelineNode {
-  transform: scale(1.15);
+  transform: scale(1.12);
   background: var(--gold-metallic);
-  color: #111;
+  color: #241E17;
 }
 
 .timelineEmptySpace {

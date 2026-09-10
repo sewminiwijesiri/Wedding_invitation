@@ -4,8 +4,7 @@ import styles from "./Recommendations.module.css";
 import { Heart } from "lucide-react";
 
 export default function Recommendations({ weddingData, lang }) {
-  const { recommendations, gallery } = weddingData;
-  const closingPhoto = gallery[2]; // Intimate photo
+  const { recommendations } = weddingData;
 
   return (
     <div className={styles.recCard}>
@@ -31,15 +30,6 @@ export default function Recommendations({ weddingData, lang }) {
       <h3 className={styles.thankYouScript}>
         {lang === "si" ? "ඉතාමත් ස්තූතියි!" : "Thank You!"}
       </h3>
-
-      {/* Final Intimate Portrait */}
-      <div className={styles.finalPhotoFrame}>
-        <img
-          src={closingPhoto.src}
-          alt={closingPhoto.caption[lang]}
-          className={styles.finalPhoto}
-        />
-      </div>
     </div>
   );
 }

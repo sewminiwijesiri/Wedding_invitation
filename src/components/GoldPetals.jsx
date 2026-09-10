@@ -18,10 +18,10 @@ export default function GoldPetals() {
     resize();
     window.addEventListener("resize", resize);
 
-    // Particle pool
+    // Particle pool - subtle warm champagne & beige ambient dust
     const particleCount = 28;
     const particles = [];
-    const colors = ["rgba(212, 175, 55, ", "rgba(236, 200, 122, ", "rgba(255, 235, 180, "];
+    const colors = ["rgba(205, 185, 160, ", "rgba(228, 212, 192, ", "rgba(245, 235, 220, "];
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
@@ -48,7 +48,7 @@ export default function GoldPetals() {
         ctx.beginPath();
         ctx.arc(p.x, p.y, Math.max(0.2, currentRadius), 0, Math.PI * 2);
         ctx.fillStyle = `${p.colorBase}${Math.max(0, currentAlpha)})`;
-        ctx.shadowColor = "#D4AF37";
+        ctx.shadowColor = "rgba(182, 155, 126, 0.4)";
         ctx.shadowBlur = 6;
         ctx.fill();
 

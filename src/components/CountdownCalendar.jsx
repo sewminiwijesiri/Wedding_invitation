@@ -88,15 +88,29 @@ export default function CountdownCalendar({ weddingData, lang }) {
 
   return (
     <div className={styles.countdownCard}>
-      {/* Date Header matching inspiration */}
-      <div className={styles.dateHeaderRow}>
-        <div className={styles.headerLine} />
-        <div className={styles.dateBadge}>
-          <span>{lang === "si" ? (date.dayNameSi || date.dayName) : (date.dayNameEn || date.dayName).toUpperCase()}</span>
-          <span className={styles.dayNumber}>{date.day}</span>
-          <span>{date.year}</span>
+      {/* Editorial Date Display matching reference Image 1 */}
+      <div className={styles.editorialDateBlock}>
+        <p className={styles.dateMonthName}>
+          {lang === "si" ? (date.monthSi || date.month) : (date.monthEn || date.month).toUpperCase()}
+        </p>
+
+        <div className={styles.dateWingsRow}>
+          <div className={styles.dateWing}>
+            <div className={styles.wingLine} />
+            <span className={styles.wingText}>
+              {lang === "si" ? (date.dayNameSi || date.dayName) : (date.dayNameEn || date.dayName).toUpperCase()}
+            </span>
+            <div className={styles.wingLine} />
+          </div>
+
+          <span className={styles.centerDayNumber}>{date.day}</span>
+
+          <div className={styles.dateWing}>
+            <div className={styles.wingLine} />
+            <span className={styles.wingText}>{date.year}</span>
+            <div className={styles.wingLine} />
+          </div>
         </div>
-        <div className={styles.headerLine} />
       </div>
 
       {/* Countdown Clock */}
@@ -156,9 +170,9 @@ export default function CountdownCalendar({ weddingData, lang }) {
                       <svg className={styles.heartRing} viewBox="0 0 36 36" fill="none">
                         <path
                           d="M18 31s-10.5-6.5-13.5-12.5C1.8 13 4.5 7.5 10 7.5c3.2 0 6 2 8 5 2-3 4.8-5 8-5 5.5 0 8.2 5.5 5.5 11C28.5 24.5 18 31 18 31z"
-                          stroke="#D4AF37"
+                          stroke="var(--gold-primary, #B69B7E)"
                           strokeWidth="1.8"
-                          fill="rgba(212, 175, 55, 0.15)"
+                          fill="rgba(182, 155, 126, 0.18)"
                         />
                       </svg>
                       <span>{targetDay}</span>

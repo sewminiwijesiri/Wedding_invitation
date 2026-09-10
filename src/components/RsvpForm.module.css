@@ -1,20 +1,21 @@
 .rsvpCard {
-  margin: 10px 20px 26px;
-  background: #FCFAF7;
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  border-radius: 18px;
-  padding: 34px 20px;
-  box-shadow: 0 8px 24px rgba(90, 75, 55, 0.08);
+  margin: 0;
+  background: rgba(235, 226, 213, 0.22);
+  border: none;
+  border-bottom: 1px solid rgba(182, 155, 126, 0.2);
+  border-radius: 0;
+  padding: 38px 24px 34px;
+  box-shadow: none;
   text-align: center;
   position: relative;
 }
 
 .rsvpIconWrapper {
-  width: 52px;
-  height: 52px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  background: rgba(212, 175, 55, 0.12);
-  border: 1px solid rgba(212, 175, 55, 0.4);
+  background: rgba(182, 155, 126, 0.12);
+  border: 1px solid rgba(182, 155, 126, 0.32);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,17 +24,20 @@
 }
 
 .rsvpTitle {
-  font-family: var(--font-script);
-  font-size: 3rem;
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
   color: var(--text-black);
-  line-height: 1.1;
+  line-height: 1.2;
   margin-bottom: 6px;
 }
 
 .rsvpSubtitle {
   font-family: var(--font-sans);
   font-size: 0.76rem;
-  color: #665F50;
+  color: var(--text-muted);
   max-width: 320px;
   margin: 0 auto 22px;
   line-height: 1.5;
@@ -54,7 +58,7 @@
   font-size: 0.7rem;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #4A4438;
+  color: var(--text-charcoal);
   font-weight: 600;
   margin-bottom: 6px;
 }
@@ -65,7 +69,7 @@
   width: 100%;
   padding: 12px 14px;
   background: #FFFFFF;
-  border: 1px solid rgba(212, 175, 55, 0.35);
+  border: 1px solid rgba(182, 155, 126, 0.3);
   border-radius: 10px;
   font-family: var(--font-sans);
   font-size: 0.85rem;
@@ -78,7 +82,7 @@
 .selectInput:focus,
 .textareaInput:focus {
   border-color: var(--gold-primary);
-  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+  box-shadow: 0 0 0 3px rgba(182, 155, 126, 0.15);
 }
 
 /* Guest Counter Stepper Box */
@@ -88,7 +92,7 @@
   justify-content: space-between;
   width: 100%;
   background: #FFFFFF;
-  border: 1px solid rgba(212, 175, 55, 0.4);
+  border: 1px solid rgba(182, 155, 126, 0.3);
   border-radius: 10px;
   padding: 6px 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
@@ -97,15 +101,15 @@
 
 .counterBox:focus-within {
   border-color: var(--gold-primary);
-  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+  box-shadow: 0 0 0 3px rgba(182, 155, 126, 0.15);
 }
 
 .counterBtn {
   width: 38px;
   height: 38px;
   border-radius: 8px;
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  background: #FAF8F5;
+  border: 1px solid rgba(182, 155, 126, 0.28);
+  background: #F9F6F0;
   color: var(--gold-dark);
   display: flex;
   align-items: center;
@@ -130,7 +134,7 @@
   opacity: 0.35;
   cursor: not-allowed;
   border-color: rgba(0, 0, 0, 0.1);
-  background: #F3F1ED;
+  background: #F3EFE9;
   color: #9C9588;
 }
 
@@ -147,7 +151,7 @@
   font-family: var(--font-serif);
   font-size: 1.55rem;
   font-weight: 700;
-  color: #1A1A1A;
+  color: var(--text-black);
   min-width: 24px;
   text-align: center;
 }
@@ -156,7 +160,7 @@
   font-family: var(--font-sans);
   font-size: 0.85rem;
   font-weight: 500;
-  color: #554D41;
+  color: var(--text-muted);
 }
 
 .radioGroup {
@@ -172,18 +176,18 @@
   gap: 10px;
   padding: 10px 14px;
   background: #FFFFFF;
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  border: 1px solid rgba(182, 155, 126, 0.28);
   border-radius: 10px;
   cursor: pointer;
   font-family: var(--font-sans);
   font-size: 0.82rem;
-  color: #2B2822;
+  color: var(--text-charcoal);
   transition: all 0.2s ease;
 }
 
 .radioOption.selected {
   border-color: var(--gold-primary);
-  background: rgba(212, 175, 55, 0.08);
+  background: rgba(182, 155, 126, 0.08);
   font-weight: 600;
 }
 
@@ -191,7 +195,7 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  border: 2px solid rgba(212, 175, 55, 0.6);
+  border: 2px solid rgba(182, 155, 126, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -216,28 +220,30 @@
 }
 
 .thankYouTitle {
-  font-family: var(--font-script);
-  font-size: 2.8rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 2.5rem;
   color: var(--gold-dark);
-  line-height: 1.1;
+  line-height: 1.2;
   margin-bottom: 8px;
 }
 
 .thankYouText {
   font-family: var(--font-serif);
   font-size: 1.15rem;
-  color: #383329;
+  color: var(--text-charcoal);
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
 .attendeeSummary {
-  background: rgba(212, 175, 55, 0.1);
-  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: rgba(182, 155, 126, 0.1);
+  border: 1px solid rgba(182, 155, 126, 0.28);
   border-radius: 12px;
   padding: 14px;
   margin-bottom: 22px;
   font-family: var(--font-sans);
   font-size: 0.78rem;
-  color: #38342E;
+  color: var(--text-charcoal);
 }

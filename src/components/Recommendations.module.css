@@ -1,10 +1,10 @@
 .recCard {
-  margin: 10px 20px 26px;
-  background: #FCFAF7;
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  border-radius: 18px;
-  padding: 34px 20px 28px;
-  box-shadow: 0 8px 24px rgba(90, 75, 55, 0.08);
+  margin: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 38px 20px 30px;
+  box-shadow: none;
   text-align: center;
   position: relative;
 }
@@ -34,7 +34,7 @@
   font-size: 0.75rem;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #262420;
+  color: var(--text-black);
   font-weight: 700;
   margin-bottom: 6px;
 }
@@ -43,7 +43,7 @@
   font-family: var(--font-serif);
   font-size: 1.05rem;
   line-height: 1.55;
-  color: #574F41;
+  color: var(--text-muted);
   max-width: 320px;
   margin: 0 auto;
 }
@@ -51,7 +51,7 @@
 .divider {
   width: 60px;
   height: 1px;
-  background: rgba(212, 175, 55, 0.4);
+  background: rgba(182, 155, 126, 0.35);
   margin: 20px auto;
 }
 
@@ -67,30 +67,12 @@
 }
 
 .thankYouScript {
-  font-family: var(--font-script);
-  font-size: 3.5rem;
-  color: #1A1A1A;
-  line-height: 1.1;
-  margin-bottom: 24px;
-}
-
-/* Bottom Couple Portrait */
-.finalPhotoFrame {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(60, 45, 25, 0.15);
-  border: 1px solid rgba(212, 175, 55, 0.4);
-}
-
-.finalPhoto {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  transition: transform 0.8s ease;
-}
-
-.finalPhotoFrame:hover .finalPhoto {
-  transform: scale(1.03);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 2.75rem;
+  color: var(--text-black);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
 }

@@ -1,35 +1,31 @@
 .eventSection {
-  padding: 10px 20px 24px;
-}
-
-.eventCard {
-  background: #FCFAF7;
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  border-radius: 16px;
-  padding: 28px 20px;
-  margin-bottom: 20px;
-  box-shadow: var(--shadow-sm);
+  padding: 38px 20px 34px;
+  border-bottom: 1px solid rgba(182, 155, 126, 0.2);
   text-align: center;
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.eventCard:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+.sectionHeader {
+  margin-bottom: 22px;
 }
 
-.iconWrapper {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: rgba(212, 175, 55, 0.12);
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 16px;
+.sectionKicker {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
   color: var(--gold-dark);
+  font-weight: 700;
+}
+
+.eventsList {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.eventItem {
+  padding: 8px 6px;
 }
 
 .eventTitle {
@@ -38,67 +34,49 @@
   font-weight: 600;
   color: var(--text-black);
   line-height: 1.25;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   letter-spacing: 0.5px;
 }
 
 .eventTime {
   font-family: var(--font-sans);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   letter-spacing: 2px;
   font-weight: 700;
   color: var(--gold-dark);
   margin-bottom: 8px;
-}
-
-.venueName {
-  font-family: var(--font-sans);
-  font-size: 0.88rem;
-  letter-spacing: 3px;
   text-transform: uppercase;
-  font-weight: 600;
-  color: #1A1A1A;
-  margin-bottom: 4px;
-}
-
-.venueAddress {
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  max-width: 280px;
-  margin: 0 auto 14px;
-  line-height: 1.5;
 }
 
 .eventNote {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 0.88rem;
-  color: #615848;
+  font-size: 0.96rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  max-width: 330px;
+  margin: 0 auto;
 }
 
-/* Single Unified Venue & Map Card */
-.venueMapCard {
-  background: #FCFAF7;
-  border: 1px solid rgba(212, 175, 55, 0.45);
-  border-radius: 16px;
-  padding: 26px 20px 22px;
-  box-shadow: var(--shadow-sm);
-  text-align: center;
-  margin-top: 4px;
-}
-
-.mapPinBadge {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: rgba(212, 175, 55, 0.12);
-  border: 1px solid rgba(212, 175, 55, 0.4);
+.heartDivider {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 12px;
-  color: var(--gold-dark);
+  margin: 20px auto 14px;
+  color: #B69B7E;
+  opacity: 0.9;
+}
+
+.venueDivider {
+  width: 80px;
+  height: 1px;
+  background: rgba(182, 155, 126, 0.3);
+  margin: 32px auto 26px;
+}
+
+.venueContainer {
+  max-width: 420px;
+  margin: 0 auto;
 }
 
 .venueSectionTitle {
@@ -108,14 +86,14 @@
   text-transform: uppercase;
   color: var(--gold-dark);
   font-weight: 700;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .venueTitle {
   font-family: var(--font-serif);
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   font-weight: 600;
-  color: #1A1A1A;
+  color: var(--text-black);
   margin-bottom: 4px;
 }
 
@@ -123,42 +101,60 @@
   font-family: var(--font-sans);
   font-size: 0.88rem;
   letter-spacing: 1px;
-  color: #38342D;
+  color: var(--text-charcoal);
   font-weight: 600;
   margin-bottom: 4px;
 }
 
 .venueAddress {
   font-family: var(--font-sans);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: var(--text-muted);
-  max-width: 320px;
-  margin: 0 auto 14px;
-  line-height: 1.5;
+  margin-bottom: 18px;
 }
 
 .mapEmbedFrame {
   width: 100%;
-  height: 240px;
+  height: 230px;
   border-radius: 12px;
-  border: 1px solid rgba(212, 175, 55, 0.4);
+  border: 1px solid rgba(182, 155, 126, 0.3);
   overflow: hidden;
   margin: 0 0 16px;
-  background: #EBE5D8;
-  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.08), 0 4px 14px rgba(0, 0, 0, 0.06);
+  background: #EAE3D5;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05), 0 4px 14px rgba(60, 45, 30, 0.04);
 }
 
 .mapActions {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.mapActions button,
+.mapActions a {
+  padding: 8px 18px;
+  font-size: 0.7rem;
+  letter-spacing: 1.6px;
+  border-radius: 20px;
+  gap: 6px;
+}
+
+.mapActions button svg,
+.mapActions a svg {
+  width: 13px;
+  height: 13px;
 }
 
 @media (max-width: 480px) {
+  .eventTitle {
+    font-size: 1.65rem;
+  }
+
   .venueTitle {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .mapEmbedFrame {
@@ -166,13 +162,15 @@
   }
 
   .mapActions {
-    flex-direction: column;
+    flex-direction: row;
     gap: 8px;
   }
 
   .mapActions button,
   .mapActions a {
-    width: 100%;
-    justify-content: center;
+    width: auto;
+    padding: 7px 14px;
+    font-size: 0.67rem;
+    letter-spacing: 1.2px;
   }
 }
