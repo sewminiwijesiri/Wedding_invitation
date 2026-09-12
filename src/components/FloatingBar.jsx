@@ -2,6 +2,7 @@
 
 import styles from "./FloatingBar.module.css";
 import { Globe, Heart, ArrowUp } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function FloatingBar({ lang, onToggleLang }) {
   const scrollToRsvp = () => {
@@ -16,7 +17,12 @@ export default function FloatingBar({ lang, onToggleLang }) {
   };
 
   return (
-    <div className={styles.floatingBarWrapper}>
+    <motion.div 
+      className={styles.floatingBarWrapper}
+      initial={{ y: 60, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 0.6, duration: 0.6, ease: "easeOut" }}
+    >
       {/* Language Switcher */}
       <button 
         onClick={onToggleLang} 
@@ -37,6 +43,7 @@ export default function FloatingBar({ lang, onToggleLang }) {
       <button onClick={scrollToTop} className={styles.topBtn} title={lang === "si" ? "ඉහළට යන්න" : "Scroll to top"}>
         <ArrowUp size={16} />
       </button>
-    </div>
+    </motion.div>
   );
 }
+

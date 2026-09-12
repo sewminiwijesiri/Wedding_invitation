@@ -14,9 +14,10 @@ export default function EnvelopeIntro({ weddingData, lang, onOpen }) {
     if (opening || opened) return;
     setOpening(true);
 
+    if (onOpen) onOpen();
+
     setTimeout(() => {
       setOpened(true);
-      if (onOpen) onOpen();
     }, 4500);
   };
 

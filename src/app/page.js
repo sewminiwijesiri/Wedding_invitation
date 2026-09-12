@@ -9,7 +9,6 @@ import CountdownCalendar from "@/components/CountdownCalendar";
 import EventDetails from "@/components/EventDetails";
 import ItineraryTimeline from "@/components/ItineraryTimeline";
 import RsvpForm from "@/components/RsvpForm";
-import WishesFeed from "@/components/WishesFeed";
 import Recommendations from "@/components/Recommendations";
 import GoldPetals from "@/components/GoldPetals";
 import FloatingBar from "@/components/FloatingBar";
@@ -19,7 +18,7 @@ import Link from "next/link";
 export default function WeddingPage() {
   const [lang, setLang] = useState("en"); // English as primary default
   const [envelopeKey, setEnvelopeKey] = useState(0); // for re-opening envelope
-  const [wishesRefreshKey, setWishesRefreshKey] = useState(0); // for refreshing guestbook wishes
+  const [autoPlaySignal, setAutoPlaySignal] = useState(0);
 
   const toggleLanguage = () => {
     setLang((prev) => (prev === "en" ? "si" : "en"));
@@ -30,8 +29,8 @@ export default function WeddingPage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handleRsvpSubmitted = () => {
-    setWishesRefreshKey((prev) => prev + 1);
+  const handleEnvelopeOpen = () => {
+    setAutoPlaySignal((prev) => prev + 1);
   };
 
   return (
@@ -44,6 +43,7 @@ export default function WeddingPage() {
         key={envelopeKey}
         weddingData={weddingData}
         lang={lang}
+        onOpen={handleEnvelopeOpen}
       />
 
       {/* Main Wedding Invitation Editorial Card */}
@@ -52,7 +52,7 @@ export default function WeddingPage() {
         <HeroSection weddingData={weddingData} lang={lang} />
 
         {/* Music Player */}
-        <MusicPlayer weddingData={weddingData} lang={lang} />
+        <MusicPlayer weddingData={weddingData} lang={lang} autoPlaySignal={autoPlaySignal} />
 
         {/* Countdown & Circled Calendar */}
         <CountdownCalendar weddingData={weddingData} lang={lang} />
@@ -64,10 +64,7 @@ export default function WeddingPage() {
         <ItineraryTimeline weddingData={weddingData} lang={lang} />
 
         {/* Interactive RSVP Form with Confetti & Supabase sync */}
-        <RsvpForm weddingData={weddingData} lang={lang} onRsvpSubmitted={handleRsvpSubmitted} />
-
-        {/* Guestbook & Well Wishes Feed */}
-        <WishesFeed lang={lang} refreshKey={wishesRefreshKey} />
+        <RsvpForm weddingData={weddingData} lang={lang} />
 
         {/* Recommendations, Guidelines & Closing Portrait */}
         <Recommendations weddingData={weddingData} lang={lang} />

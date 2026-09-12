@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import styles from "./CountdownCalendar.module.css";
-import { Calendar, Heart } from "lucide-react";
+import { Calendar } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function CountdownCalendar({ weddingData, lang }) {
   const { date } = weddingData;
@@ -87,9 +88,21 @@ export default function CountdownCalendar({ weddingData, lang }) {
   };
 
   return (
-    <div className={styles.countdownCard}>
+    <motion.div 
+      className={styles.countdownCard}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       {/* Editorial Date Display matching reference Image 1 */}
-      <div className={styles.editorialDateBlock}>
+      <motion.div 
+        className={styles.editorialDateBlock}
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+      >
         <p className={styles.dateMonthName}>
           {lang === "si" ? (date.monthSi || date.month) : (date.monthEn || date.month).toUpperCase()}
         </p>
@@ -111,14 +124,20 @@ export default function CountdownCalendar({ weddingData, lang }) {
             <div className={styles.wingLine} />
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Countdown Clock */}
       <p className={styles.countdownTitle}>
         {lang === "si" ? "ඉතිරි කාලය" : "COUNTDOWN"}
       </p>
 
-      <div className={styles.clockGrid}>
+      <motion.div 
+        className={styles.clockGrid}
+        initial={{ opacity: 0, y: 15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
         <div className={styles.timeBox}>
           <span className={styles.timeDigit}>{timeLeft.days}</span>
           <span className={styles.timeLabel}>{lang === "si" ? "දින" : "Days"}</span>
@@ -138,7 +157,7 @@ export default function CountdownCalendar({ weddingData, lang }) {
           <span className={styles.timeDigit}>{timeLeft.seconds}</span>
           <span className={styles.timeLabel}>{lang === "si" ? "තත්පර" : "Secs"}</span>
         </div>
-      </div>
+      </motion.div>
 
       <div className={styles.calendarDivider} />
 
@@ -150,7 +169,13 @@ export default function CountdownCalendar({ weddingData, lang }) {
         {lang === "si" ? date.monthSi : date.monthEn} {date.year}
       </p>
 
-      <table className={styles.calendarTable}>
+      <motion.table 
+        className={styles.calendarTable}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+      >
         <thead>
           <tr>
             {weekdays.map((w, idx) => (
@@ -185,10 +210,16 @@ export default function CountdownCalendar({ weddingData, lang }) {
             </tr>
           ))}
         </tbody>
-      </table>
+      </motion.table>
 
       {/* Add to Calendar Button */}
-      <div className={styles.calendarActions}>
+      <motion.div 
+        className={styles.calendarActions}
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+      >
         <a
           href={getGoogleCalendarUrl()}
           target="_blank"
@@ -198,7 +229,8 @@ export default function CountdownCalendar({ weddingData, lang }) {
           <Calendar size={14} />
           <span>{lang === "si" ? "දින දර්ශනයට එක් කරන්න" : "Add to Calendar"}</span>
         </a>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
+

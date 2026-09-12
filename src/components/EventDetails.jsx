@@ -1,21 +1,10 @@
-"use client";
-
-import { useState } from "react";
 import styles from "./EventDetails.module.css";
-import { MapPin, ExternalLink, Check, Heart } from "lucide-react";
+import { ExternalLink, Heart } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function EventDetails({ weddingData, lang }) {
-  const [copied, setCopied] = useState(false);
   const isSi = lang === "si";
   const { events, location } = weddingData;
-
-  const handleCopyAddress = (text) => {
-    if (navigator?.clipboard) {
-      navigator.clipboard.writeText(text);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    }
-  };
 
   const hallName = isSi ? (location?.hallSi || "ක්වීන්ස් බෝල්රූම් ශාලාව") : (location?.hall || "Queen's Ballroom Hall");
   const hotelName = isSi ? (location?.nameSi || "රෝයල් රෙස්ට් හවුස්, පේරාදෙණිය") : (location?.name || "Royal Rest House, Peradeniya");
@@ -24,7 +13,13 @@ export default function EventDetails({ weddingData, lang }) {
   const mapUrl = location?.mapUrl || "https://maps.google.com/?q=Royal+Rest+House+Peradeniya";
 
   return (
-    <section className={styles.eventSection}>
+    <motion.section 
+      className={styles.eventSection}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       {/* Section Header */}
       <div className={styles.sectionHeader}>
         <p className={styles.sectionKicker}>
@@ -35,7 +30,14 @@ export default function EventDetails({ weddingData, lang }) {
       {/* Simplified Events Flow */}
       <div className={styles.eventsList}>
         {events.map((evt, idx) => (
-          <div key={evt.id} className={styles.eventItem}>
+          <motion.div 
+            key={evt.id} 
+            className={styles.eventItem}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: idx * 0.15 }}
+          >
             <h3 className={styles.eventTitle}>{evt.title[lang]}</h3>
             <p className={styles.eventTime}>{isSi ? (evt.timeSi || evt.time) : evt.time}</p>
             <p className={styles.eventNote}>{evt.note[lang]}</p>
@@ -44,24 +46,35 @@ export default function EventDetails({ weddingData, lang }) {
                 <Heart size={15} fill="#B69B7E" color="#B69B7E" strokeWidth={0} />
               </div>
             )}
-          </div>
+          </motion.div>
         ))}
       </div>
 
       <div className={styles.venueDivider} />
 
       {/* Hotel Preview Photo */}
-      <div className={styles.hotelImageWrapper}>
+      <motion.div 
+        className={styles.hotelImageWrapper}
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+      >
         <img
           src="/images/hotel.jpeg"
           alt="Royal Rest House Hotel Venue"
           className={styles.hotelImage}
         />
-      </div>
+      </motion.div>
 
       {/* Single Unified Venue & Location Map */}
-      <div className={styles.venueContainer}>
-
+      <motion.div 
+        className={styles.venueContainer}
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.2 }}
+      >
         <p className={styles.venueSectionTitle}>
           {isSi ? "මංගල ස්ථානය සහ සිතියම" : "WEDDING VENUE & MAP"}
         </p>
@@ -84,20 +97,8 @@ export default function EventDetails({ weddingData, lang }) {
           />
         </div>
 
-        {/* Map Actions: Copy Address and Open in Google Maps */}
+        {/* Map Action: Open in Google Maps */}
         <div className={styles.mapActions}>
-          <button
-            className="btn-outline-gold"
-            onClick={() => handleCopyAddress(`${hallName}, ${hotelName}, ${addressText}`)}
-          >
-            {copied ? <Check size={13} /> : <MapPin size={13} />}
-            <span>
-              {copied
-                ? (isSi ? "පිටපත් විය!" : "Copied!")
-                : (isSi ? "ලිපිනය පිටපත් කරන්න" : "Copy Address")}
-            </span>
-          </button>
-
           <a
             href={mapUrl}
             target="_blank"
@@ -108,7 +109,8 @@ export default function EventDetails({ weddingData, lang }) {
             <ExternalLink size={13} />
           </a>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }
+
