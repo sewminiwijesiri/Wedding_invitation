@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import styles from "./RsvpForm.module.css";
 import { MailCheck, Send, RefreshCw, Heart, Plus, Minus, Loader2, CheckCircle2 } from "lucide-react";
 import { submitRsvpToSupabase, isSupabaseConfigured } from "@/lib/supabaseClient";
+import { motion } from "framer-motion";
 
 export default function RsvpForm({ weddingData, lang, onRsvpSubmitted }) {
   const [formData, setFormData] = useState({
@@ -88,7 +89,14 @@ export default function RsvpForm({ weddingData, lang, onRsvpSubmitted }) {
   };
 
   return (
-    <div className={styles.rsvpCard} id="rsvp">
+    <motion.div 
+      className={styles.rsvpCard} 
+      id="rsvp"
+      initial={{ opacity: 0, y: 35 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <div className={styles.rsvpIconWrapper}>
         <MailCheck size={26} strokeWidth={1.5} />
       </div>
@@ -103,7 +111,12 @@ export default function RsvpForm({ weddingData, lang, onRsvpSubmitted }) {
       </p>
 
       {submitted ? (
-        <div className={styles.thankYouBox}>
+        <motion.div 
+          className={styles.thankYouBox}
+          initial={{ opacity: 0, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
           <Heart size={44} fill="#D4AF37" color="#D4AF37" style={{ margin: "0 auto 12px" }} />
           <h4 className={styles.thankYouTitle}>
             {lang === "si" ? "ඉතාමත් ස්තූතියි!" : "Thank You!"}
@@ -136,21 +149,14 @@ export default function RsvpForm({ weddingData, lang, onRsvpSubmitted }) {
               gap: "6px",
               fontSize: "0.78rem",
               color: "#388E3C",
-              margin: "8px 0 16px",
+              margin: "8px 0 0",
               fontFamily: "var(--font-sans)"
             }}>
               <CheckCircle2 size={14} />
               <span>{lang === "si" ? "දත්ත ගබඩාවට සාර්ථකව සුරක්ෂිත විය" : "Confirmed & saved to database"}</span>
             </div>
           )}
-
-          <div style={{ marginTop: "12px" }}>
-            <button onClick={handleReset} className="btn-outline-gold">
-              <RefreshCw size={14} />
-              <span>{lang === "si" ? "පිළිතුර වෙනස් කරන්න" : "Update Response"}</span>
-            </button>
-          </div>
-        </div>
+        </motion.div>
       ) : (
         <form onSubmit={handleSubmit} className={styles.formContainer}>
           {errorMessage && (
@@ -293,6 +299,7 @@ export default function RsvpForm({ weddingData, lang, onRsvpSubmitted }) {
           </div>
         </form>
       )}
-    </div>
+    </motion.div>
   );
 }
+

@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "./HeroSection.module.css";
+import { motion } from "framer-motion";
 
 export default function HeroSection({ weddingData, lang }) {
   const { couple, date } = weddingData;
@@ -13,21 +14,39 @@ export default function HeroSection({ weddingData, lang }) {
   return (
     <section className={styles.heroWrapper}>
       {/* Luxury Editorial Photo Card matching reference image */}
-      <div
+      <motion.div
         className={styles.editorialPhotoCard}
         style={{
           backgroundImage: `linear-gradient(180deg, rgba(16, 12, 8, 0.05) 0%, rgba(16, 12, 8, 0.0) 35%, rgba(14, 10, 6, 0.28) 60%, rgba(12, 8, 5, 0.68) 82%, rgba(10, 7, 4, 0.88) 100%), url('${heroImageSrc}')`
         }}
+        initial={{ opacity: 0, scale: 0.98 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }}
       >
         {/* Centered Romantic Typography Stack */}
-        <div className={styles.photoOverlayContent}>
+        <motion.div 
+          className={styles.photoOverlayContent}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        >
           {/* Pre-header Tagline */}
-          <p className={styles.weddingTagline}>
+          <motion.p 
+            className={styles.weddingTagline}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
             {isSi ? "අපගේ විවාහ මංගල්‍යය" : "WE'RE GETTING MARRIED"}
-          </p>
+          </motion.p>
 
           {/* Couple Names in Flowing Signature Script */}
-          <h1 className={`${styles.coupleNames} ${isSi ? styles.coupleNamesSi : ""}`}>
+          <motion.h1 
+            className={`${styles.coupleNames} ${isSi ? styles.coupleNamesSi : ""}`}
+            initial={{ opacity: 0, scale: 0.92 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          >
             {isSi ? (
               `${couple.groomSi || couple.groom} සහ ${couple.brideSi || couple.bride}`
             ) : (
@@ -37,15 +56,25 @@ export default function HeroSection({ weddingData, lang }) {
                 <span className={styles.secondName}>{couple.bride}</span>
               </>
             )}
-          </h1>
+          </motion.h1>
 
           {/* Minimalist Dotted Serif Date matching reference image */}
-          <p className={styles.weddingDateNum}>
+          <motion.p 
+            className={styles.weddingDateNum}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+          >
             {`${date.day}.${monthNum}.${date.year}`}
-          </p>
+          </motion.p>
 
           {/* Botanical Olive Branch Flourish */}
-          <div className={styles.flourishWrapper}>
+          <motion.div 
+            className={styles.flourishWrapper}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.9 }}
+          >
             <svg
               viewBox="0 0 160 26"
               className={styles.botanicalFlourish}
@@ -99,30 +128,25 @@ export default function HeroSection({ weddingData, lang }) {
                 fill="rgba(255, 255, 255, 0.35)"
               />
             </svg>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Realistic Deckle / Torn Paper Edge at bottom of card */}
         <div className={styles.tornPaperEdge}>
           <svg
-            viewBox="0 0 1200 48"
+            viewBox="0 0 1200 36"
             preserveAspectRatio="none"
             className={styles.tornPaperSvg}
             xmlns="http://www.w3.org/2000/svg"
           >
-            {/* Subtle paper depth shadow */}
             <path
-              d="M 0 48 L 0 24 C 35 20, 75 27, 110 21 C 160 16, 210 28, 260 22 C 310 16, 360 29, 410 23 C 460 17, 510 27, 560 21 C 620 16, 680 29, 740 23 C 800 17, 860 27, 920 22 C 980 16, 1040 29, 1100 23 L 1200 22 L 1200 48 Z"
-              fill="rgba(215, 204, 190, 0.45)"
-            />
-            {/* Main torn paper edge */}
-            <path
-              d="M 0 48 L 0 20 C 30 16, 55 24, 85 18 C 115 13, 140 23, 170 18 C 200 13, 225 24, 255 18 C 285 12, 310 23, 340 17 C 370 11, 395 24, 425 18 C 455 12, 480 22, 510 17 C 540 12, 565 25, 595 19 C 625 13, 650 22, 680 17 C 710 12, 735 24, 765 18 C 795 12, 820 22, 850 17 C 880 12, 905 24, 935 18 C 965 12, 990 22, 1020 17 C 1050 12, 1075 24, 1105 18 C 1135 12, 1170 22, 1200 17 L 1200 48 Z"
-              fill="var(--card-ivory, #FAF7F2)"
+              d="M 0 36 L 0 14 C 40 8, 80 18, 120 12 C 160 6, 200 16, 240 10 C 280 4, 320 16, 360 10 C 400 4, 440 14, 480 8 C 520 2, 560 14, 600 8 C 640 2, 680 14, 720 8 C 760 2, 800 14, 840 8 C 880 2, 920 14, 960 8 C 1000 2, 1040 14, 1080 8 C 1120 2, 1160 12, 1200 6 L 1200 36 Z"
+              fill="var(--card-ivory, #F8F4ED)"
             />
           </svg>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
+

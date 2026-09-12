@@ -41,8 +41,9 @@ export const weddingData = {
     }
   },
   music: {
-    title: "A Thousand Years & Golden Melodies",
-    artist: "The Wedding Symphony Orchestra",
+    title: "Wildest Dreams",
+    artist: "Taylor Swift",
+    audioSrc: "/audio/Wildest Dreams.mp3",
     subtitle: {
       en: "Play our favorite song",
       si: "අපගේ ආදර ගීතයට සවන් දෙන්න"
@@ -112,7 +113,7 @@ export const weddingData = {
     {
       time: "9:40 AM",
       timeSi: "පෙ.ව. 9:40",
-      icon: "dance",
+      icon: "church",
       title: { en: "Poruwa Ceremony", si: "පෝරුවේ චාරිත්‍ර" },
       desc: { en: "Auspicious Poruwa rituals & sacred union of vows", si: "සුබ මුහුර්තයෙන් පෝරුවේ චාරිත්‍ර ආරම්භය" }
     },
@@ -126,7 +127,7 @@ export const weddingData = {
     {
       time: "11:30 AM",
       timeSi: "පෙ.ව. 11:30",
-      icon: "party",
+      icon: "dance",
       title: { en: "Grand Entrance & First Dance", si: "යුවලගේ ප්‍රවේශය හා පළමු නැටුම" },
       desc: { en: "Newlyweds entrance, celebration & opening toasts", si: "අභිනව යුවල පිළිගැනීම සහ ප්‍රීතිමත් සුබපැතුම්" }
     },
@@ -140,7 +141,7 @@ export const weddingData = {
     {
       time: "1:45 PM",
       timeSi: "ප.ව. 1:45",
-      icon: "party",
+      icon: "dance",
       title: { en: "Music & Celebration", si: "සංගීතය සහ ප්‍රීතිමත් නර්තනය" },
       desc: { en: "Live melodies, dancing and joyous moments", si: "සජීවී සංගීතය සහ ප්‍රීතිමත් නර්තනය" }
     },
