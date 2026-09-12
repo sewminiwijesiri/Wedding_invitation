@@ -9,14 +9,17 @@ import CountdownCalendar from "@/components/CountdownCalendar";
 import EventDetails from "@/components/EventDetails";
 import ItineraryTimeline from "@/components/ItineraryTimeline";
 import RsvpForm from "@/components/RsvpForm";
+import WishesFeed from "@/components/WishesFeed";
 import Recommendations from "@/components/Recommendations";
 import GoldPetals from "@/components/GoldPetals";
 import FloatingBar from "@/components/FloatingBar";
-import { Mail, Heart } from "lucide-react";
+import { Mail, Lock } from "lucide-react";
+import Link from "next/link";
 
 export default function WeddingPage() {
   const [lang, setLang] = useState("en"); // English as primary default
   const [envelopeKey, setEnvelopeKey] = useState(0); // for re-opening envelope
+  const [wishesRefreshKey, setWishesRefreshKey] = useState(0); // for refreshing guestbook wishes
 
   const toggleLanguage = () => {
     setLang((prev) => (prev === "en" ? "si" : "en"));
@@ -25,6 +28,10 @@ export default function WeddingPage() {
   const reopenEnvelope = () => {
     setEnvelopeKey((prev) => prev + 1);
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleRsvpSubmitted = () => {
+    setWishesRefreshKey((prev) => prev + 1);
   };
 
   return (
@@ -56,8 +63,11 @@ export default function WeddingPage() {
         {/* Activities Itinerary Timeline */}
         <ItineraryTimeline weddingData={weddingData} lang={lang} />
 
-        {/* Interactive RSVP Form with Confetti */}
-        <RsvpForm weddingData={weddingData} lang={lang} />
+        {/* Interactive RSVP Form with Confetti & Supabase sync */}
+        <RsvpForm weddingData={weddingData} lang={lang} onRsvpSubmitted={handleRsvpSubmitted} />
+
+        {/* Guestbook & Well Wishes Feed */}
+        <WishesFeed lang={lang} refreshKey={wishesRefreshKey} />
 
         {/* Recommendations, Guidelines & Closing Portrait */}
         <Recommendations weddingData={weddingData} lang={lang} />
@@ -97,14 +107,41 @@ export default function WeddingPage() {
             "{weddingData.couple.quote[lang]}"
           </p>
 
-          <button
-            onClick={reopenEnvelope}
-            className="btn-outline-gold"
-            style={{ fontSize: "0.68rem", padding: "8px 18px" }}
-          >
-            <Mail size={14} />
-            <span>{lang === "si" ? "ආරාධනා පත්‍රය නැවත බලන්න" : "Replay Envelope"}</span>
-          </button>
+          <div style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "12px",
+            flexWrap: "wrap"
+          }}>
+            <button
+              onClick={reopenEnvelope}
+              className="btn-outline-gold"
+              style={{ fontSize: "0.68rem", padding: "8px 18px" }}
+            >
+              <Mail size={14} />
+              <span>{lang === "si" ? "ආරාධනා පත්‍රය නැවත බලන්න" : "Replay Envelope"}</span>
+            </button>
+
+            <Link
+              href="/login"
+              className="btn-outline-gold"
+              style={{
+                width: "36px",
+                height: "36px",
+                borderRadius: "50%",
+                padding: 0,
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                textDecoration: "none"
+              }}
+              title={lang === "si" ? "පරිපාලක පිවිසුම" : "Admin Login"}
+              aria-label="Admin Login"
+            >
+              <Lock size={14} />
+            </Link>
+          </div>
         </footer>
       </article>
 

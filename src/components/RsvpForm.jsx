@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "react";
 import styles from "./RsvpForm.module.css";
-import { MailCheck, Send, CheckCircle, RefreshCw, Heart, Plus, Minus } from "lucide-react";
+import { MailCheck, Send, RefreshCw, Heart, Plus, Minus, Loader2, CheckCircle2 } from "lucide-react";
+import { submitRsvpToSupabase, isSupabaseConfigured } from "@/lib/supabaseClient";
 
-export default function RsvpForm({ weddingData, lang }) {
+export default function RsvpForm({ weddingData, lang, onRsvpSubmitted }) {
   const [formData, setFormData] = useState({
     name: "",
     attending: "yes",
@@ -13,6 +14,9 @@ export default function RsvpForm({ weddingData, lang }) {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [savedToCloud, setSavedToCloud] = useState(false);
 
   useEffect(() => {
     // Check saved RSVP
@@ -44,16 +48,35 @@ export default function RsvpForm({ weddingData, lang }) {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name.trim()) return;
 
+    setIsSubmitting(true);
+    setErrorMessage("");
+
+    // Always save to localStorage as immediate offline cache
     try {
       localStorage.setItem("wedding_rsvp_data", JSON.stringify(formData));
     } catch (e) {}
 
+    // Submit to Supabase database
+    const res = await submitRsvpToSupabase(formData);
+
+    if (res.success) {
+      setSavedToCloud(true);
+    } else if (res.isConfigured && res.error) {
+      // If configured but had network/DB error
+      console.warn("Supabase save error, saved locally:", res.error);
+    }
+
+    setIsSubmitting(false);
     setSubmitted(true);
     triggerGoldConfetti();
+
+    if (typeof onRsvpSubmitted === "function") {
+      onRsvpSubmitted();
+    }
   };
 
   const handleReset = () => {
@@ -61,6 +84,7 @@ export default function RsvpForm({ weddingData, lang }) {
       localStorage.removeItem("wedding_rsvp_data");
     } catch (e) {}
     setSubmitted(false);
+    setSavedToCloud(false);
   };
 
   return (
@@ -105,13 +129,36 @@ export default function RsvpForm({ weddingData, lang }) {
                 : "Unable to attend"}
           </div>
 
-          <button onClick={handleReset} className="btn-outline-gold">
-            <RefreshCw size={14} />
-            <span>{lang === "si" ? "පිළිතුර වෙනස් කරන්න" : "Update Response"}</span>
-          </button>
+          {savedToCloud && (
+            <div style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "6px",
+              fontSize: "0.78rem",
+              color: "#388E3C",
+              margin: "8px 0 16px",
+              fontFamily: "var(--font-sans)"
+            }}>
+              <CheckCircle2 size={14} />
+              <span>{lang === "si" ? "දත්ත ගබඩාවට සාර්ථකව සුරක්ෂිත විය" : "Confirmed & saved to database"}</span>
+            </div>
+          )}
+
+          <div style={{ marginTop: "12px" }}>
+            <button onClick={handleReset} className="btn-outline-gold">
+              <RefreshCw size={14} />
+              <span>{lang === "si" ? "පිළිතුර වෙනස් කරන්න" : "Update Response"}</span>
+            </button>
+          </div>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className={styles.formContainer}>
+          {errorMessage && (
+            <div style={{ color: "#d32f2f", fontSize: "0.82rem", marginBottom: "12px", textAlign: "center" }}>
+              {errorMessage}
+            </div>
+          )}
+
           {/* Guest Name */}
           <div className={styles.inputGroup}>
             <label className={styles.label}>
@@ -124,6 +171,7 @@ export default function RsvpForm({ weddingData, lang }) {
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               className={styles.textInput}
+              disabled={isSubmitting}
             />
           </div>
 
@@ -135,7 +183,7 @@ export default function RsvpForm({ weddingData, lang }) {
             <div className={styles.radioGroup}>
               <div
                 className={`${styles.radioOption} ${formData.attending === "yes" ? styles.selected : ""}`}
-                onClick={() => setFormData({ ...formData, attending: "yes" })}
+                onClick={() => !isSubmitting && setFormData({ ...formData, attending: "yes" })}
               >
                 <div className={styles.radioCircle}>
                   {formData.attending === "yes" && <div className={styles.radioInnerDot} />}
@@ -145,7 +193,7 @@ export default function RsvpForm({ weddingData, lang }) {
 
               <div
                 className={`${styles.radioOption} ${formData.attending === "no" ? styles.selected : ""}`}
-                onClick={() => setFormData({ ...formData, attending: "no" })}
+                onClick={() => !isSubmitting && setFormData({ ...formData, attending: "no" })}
               >
                 <div className={styles.radioCircle}>
                   {formData.attending === "no" && <div className={styles.radioInnerDot} />}
@@ -173,7 +221,7 @@ export default function RsvpForm({ weddingData, lang }) {
                     }}
                     className={styles.counterBtn}
                     aria-label={lang === "si" ? "අඩු කරන්න" : "Decrease guests"}
-                    disabled={parseInt(formData.guests, 10) <= 1}
+                    disabled={isSubmitting || parseInt(formData.guests, 10) <= 1}
                   >
                     <Minus size={16} strokeWidth={2.2} />
                   </button>
@@ -199,6 +247,7 @@ export default function RsvpForm({ weddingData, lang }) {
                     }}
                     className={styles.counterBtn}
                     aria-label={lang === "si" ? "වැඩි කරන්න" : "Increase guests"}
+                    disabled={isSubmitting}
                   >
                     <Plus size={16} strokeWidth={2.2} />
                   </button>
@@ -218,13 +267,28 @@ export default function RsvpForm({ weddingData, lang }) {
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               className={styles.textareaInput}
+              disabled={isSubmitting}
             />
           </div>
 
           <div style={{ textAlign: "center", marginTop: "24px" }}>
-            <button type="submit" className="btn-gold" style={{ width: "100%" }}>
-              <Send size={16} />
-              <span>{lang === "si" ? "තහවුරු කිරීම යවන්න" : "Send RSVP"}</span>
+            <button
+              type="submit"
+              className="btn-gold"
+              style={{ width: "100%", justifyContent: "center" }}
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
+                <>
+                  <Loader2 size={16} className="animate-spin" />
+                  <span>{lang === "si" ? "සුරකිමින් පවතී..." : "Saving RSVP..."}</span>
+                </>
+              ) : (
+                <>
+                  <Send size={16} />
+                  <span>{lang === "si" ? "තහවුරු කිරීම යවන්න" : "Send RSVP"}</span>
+                </>
+              )}
             </button>
           </div>
         </form>

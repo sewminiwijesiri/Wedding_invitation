@@ -1,22 +1,28 @@
 /* Full Screen Envelope matching website warm beige palette */
 .envelopeScreen {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
   width: 100vw;
+  height: 100%;
   height: 100vh;
   height: 100dvh;
-  z-index: 9999;
-  background: linear-gradient(180deg, #F1ECE3 0%, #E6DDD0 60%, #DDD1BF 100%);
+  z-index: 99999;
+  background: rgba(235, 226, 213, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   overflow: hidden;
   cursor: pointer;
   user-select: none;
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 1.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .envelopeScreen.opening {
-  transition-delay: 0.2s;
+  transition-delay: 2.6s;
   opacity: 0;
-  transform: scale(1.04);
   pointer-events: none;
 }
 
@@ -24,34 +30,24 @@
   display: none;
 }
 
-/* Subtle Side Crease Lines */
-.sideCreasesSvg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* Top Triangular V-Flap with elongated length */
+/* Top Triangular V-Flap opening UPWARDS */
 .topFlap {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 60vh;
-  max-height: 590px;
+  height: 58vh;
+  max-height: 570px;
   transform-origin: top center;
-  transition: transform 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 3.4s cubic-bezier(0.35, 0.08, 0.25, 1);
   transform-style: preserve-3d;
-  z-index: 5;
+  z-index: 6;
   filter: drop-shadow(0 14px 22px rgba(110, 90, 65, 0.25))
           drop-shadow(0 4px 8px rgba(110, 90, 65, 0.12));
 }
 
 .topFlap.topFlapOpen {
-  transform: rotateX(180deg);
+  transform: perspective(1000px) rotateX(180deg);
 }
 
 .flapSvg {
@@ -63,10 +59,38 @@
   display: block;
 }
 
+/* Bottom Pocket Flap opening DOWNWARDS */
+.bottomFlap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70vh;
+  max-height: 680px;
+  transform-origin: bottom center;
+  transition: transform 3.4s cubic-bezier(0.35, 0.08, 0.25, 1);
+  transform-style: preserve-3d;
+  z-index: 4;
+  filter: drop-shadow(0 -8px 18px rgba(110, 90, 65, 0.16));
+}
+
+.bottomFlap.bottomFlapOpen {
+  transform: perspective(1000px) rotateX(-180deg);
+}
+
+.bottomFlapSvg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 /* Monogram Initials "Y | S" in crisp charcoal matching Image 2 */
 .flapMonogram {
   position: absolute;
-  top: 26vh;
+  top: 22vh;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -80,7 +104,7 @@
 .initialGroom,
 .initialBride {
   font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
-  font-size: clamp(3.2rem, 9vw, 4.6rem);
+  font-size: clamp(3rem, 8.5vw, 4.4rem);
   font-weight: 600;
   line-height: 1;
   color: #241E18;
@@ -90,16 +114,103 @@
 
 .verticalBar {
   width: 1.5px;
-  height: clamp(42px, 9.5vw, 58px);
+  height: clamp(40px, 9vw, 56px);
   background: rgba(36, 30, 24, 0.88);
   box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
   display: inline-block;
 }
 
+/* ==========================================================================
+   Botanical Ivory Wax Seal & Crossed Ribbon Closure
+   ========================================================================== */
+.sealWrapper {
+  position: absolute;
+  top: 95.1%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 12;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+
+/* Ambient Golden Glow Pulsing behind Wax Seal */
+.sealGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: clamp(105px, 16vw, 140px);
+  height: clamp(105px, 16vw, 140px);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.28) 0%,
+    rgba(212, 175, 55, 0.08) 52%,
+    rgba(212, 175, 55, 0) 74%
+  );
+  animation: sealPulse 3.2s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes sealPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(0.92);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.18);
+    opacity: 0.95;
+  }
+}
+
+/* Botanical Wax Seal Picture Container & Image */
+.sealPicture {
+  display: block;
+  position: relative;
+  z-index: 3;
+  line-height: 0;
+}
+
+.sealImage {
+  width: clamp(102px, 15.5vw, 134px);
+  height: auto;
+  aspect-ratio: 831 / 849;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 22px rgba(60, 45, 30, 0.32))
+          drop-shadow(0 4px 8px rgba(60, 45, 30, 0.18));
+  transition: transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1),
+              filter 0.38s ease;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.envelopeScreen:hover .sealImage,
+.sealWrapper:hover .sealImage {
+  transform: scale(1.055) rotate(1deg);
+  filter: drop-shadow(0 18px 28px rgba(60, 45, 30, 0.38))
+          drop-shadow(0 6px 12px rgba(60, 45, 30, 0.22));
+}
+
+.sealWrapper:active .sealImage {
+  transform: scale(0.97);
+}
+
+/* Fade date on opening */
+.envelopeScreen.opening .envelopeDate {
+  opacity: 0;
+  transition: opacity 1.2s ease 1.2s;
+}
+
 /* Minimalist Date at Bottom Center in deep charcoal */
 .envelopeDate {
   position: absolute;
-  bottom: clamp(36px, 7vh, 64px);
+  bottom: clamp(32px, 6.5vh, 58px);
   left: 0;
   right: 0;
   text-align: center;
@@ -114,14 +225,33 @@
   pointer-events: none;
 }
 
-/* Desktop framing adjustments */
+/* Responsive & Desktop framing adjustments */
 @media (min-width: 600px) {
   .topFlap {
-    height: 58vh;
-    max-height: 540px;
+    height: 56vh;
+    max-height: 530px;
+  }
+
+  .bottomFlap {
+    height: 68vh;
+    max-height: 650px;
   }
 
   .flapMonogram {
-    top: 24vh;
+    top: 22vh;
+  }
+}
+
+@media (max-height: 560px) {
+  .topFlap {
+    height: 54vh;
+  }
+
+  .bottomFlap {
+    height: 66vh;
+  }
+
+  .flapMonogram {
+    top: 19vh;
   }
 }

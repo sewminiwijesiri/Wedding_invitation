@@ -71,7 +71,32 @@
   width: 80px;
   height: 1px;
   background: rgba(182, 155, 126, 0.3);
-  margin: 32px auto 26px;
+  margin: 24px auto 24px;
+}
+
+.hotelImageWrapper {
+  max-width: 360px;
+  width: 100%;
+  margin: 24px auto 28px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(182, 155, 126, 0.35);
+  box-shadow: 0 10px 28px rgba(182, 155, 126, 0.18);
+  position: relative;
+}
+
+.hotelImage {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+  image-rendering: -webkit-optimize-contrast;
+  transition: transform 0.4s ease;
+}
+
+.hotelImageWrapper:hover .hotelImage {
+  transform: scale(1.03);
 }
 
 .venueContainer {
@@ -155,6 +180,10 @@
 
   .venueTitle {
     font-size: 1.3rem;
+  }
+
+  .hotelImage {
+    height: 180px;
   }
 
   .mapEmbedFrame {
