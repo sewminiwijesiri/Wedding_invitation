@@ -1,0 +1,131 @@
+.wishesCard {
+  background: var(--bg-card, #FFFDF8);
+  border: 1px solid var(--gold-border, rgba(182, 155, 126, 0.25));
+  border-radius: var(--radius-lg, 16px);
+  padding: 32px 24px;
+  margin: 32px 0;
+  box-shadow: 0 10px 30px rgba(182, 155, 126, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(182, 155, 126, 0.1));
+  color: var(--gold-dark, #AA7C11);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.title {
+  font-family: var(--font-serif, "Cormorant Garamond", serif);
+  font-size: 1.6rem;
+  color: var(--text-heading, #2C2621);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-family: var(--font-sans, "Outfit", sans-serif);
+  font-size: 0.84rem;
+  color: var(--text-muted, #7A7063);
+}
+
+.feedGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.feedGrid::-webkit-scrollbar {
+  width: 5px;
+}
+
+.feedGrid::-webkit-scrollbar-track {
+  background: rgba(182, 155, 126, 0.1);
+  border-radius: 4px;
+}
+
+.feedGrid::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.4);
+  border-radius: 4px;
+}
+
+.wishBubble {
+  background: rgba(248, 244, 237, 0.6);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  padding: 16px 20px;
+  transition: all 0.25s ease;
+}
+
+.wishBubble:hover {
+  transform: translateY(-2px);
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: 0 4px 14px rgba(182, 155, 126, 0.1);
+}
+
+.wishHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.guestName {
+  font-family: var(--font-serif, "Cormorant Garamond", serif);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--gold-dark, #8A6410);
+}
+
+.wishDate {
+  font-size: 0.72rem;
+  color: var(--text-muted, #8C8275);
+  font-family: var(--font-sans, "Outfit", sans-serif);
+}
+
+.wishMessage {
+  font-family: var(--font-serif, "Cormorant Garamond", serif);
+  font-style: italic;
+  font-size: 0.98rem;
+  color: #4A4237;
+  line-height: 1.5;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 24px;
+  font-family: var(--font-sans, "Outfit", sans-serif);
+  font-size: 0.88rem;
+  color: var(--text-muted, #7A7063);
+  background: rgba(248, 244, 237, 0.4);
+  border-radius: 12px;
+  border: 1px dashed rgba(212, 175, 55, 0.3);
+}
+
+.demoBadge {
+  display: inline-block;
+  font-size: 0.68rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: rgba(212, 175, 55, 0.15);
+  color: var(--gold-dark, #8A6410);
+  margin-top: 8px;
+  font-family: var(--font-sans, sans-serif);
+  letter-spacing: 0.5px;
+}

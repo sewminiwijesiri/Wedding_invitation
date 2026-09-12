@@ -50,6 +50,15 @@ export default function EventDetails({ weddingData, lang }) {
 
       <div className={styles.venueDivider} />
 
+      {/* Hotel Preview Photo */}
+      <div className={styles.hotelImageWrapper}>
+        <img
+          src="/images/hotel.jpeg"
+          alt="Royal Rest House Hotel Venue"
+          className={styles.hotelImage}
+        />
+      </div>
+
       {/* Single Unified Venue & Location Map */}
       <div className={styles.venueContainer}>
 

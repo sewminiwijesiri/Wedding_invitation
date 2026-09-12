@@ -17,7 +17,7 @@ export default function EnvelopeIntro({ weddingData, lang, onOpen }) {
     setTimeout(() => {
       setOpened(true);
       if (onOpen) onOpen();
-    }, 950);
+    }, 4500);
   };
 
   if (opened) return null;
@@ -31,33 +31,7 @@ export default function EnvelopeIntro({ weddingData, lang, onOpen }) {
       aria-label="Open wedding invitation"
       onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") handleOpen(); }}
     >
-      {/* Subtle side crease lines matching reference */}
-      <svg
-        viewBox="0 0 1000 1000"
-        preserveAspectRatio="none"
-        className={styles.sideCreasesSvg}
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
-      >
-        <line
-          x1="0"
-          y1="420"
-          x2="240"
-          y2="570"
-          stroke="rgba(140, 115, 85, 0.22)"
-          strokeWidth="2"
-        />
-        <line
-          x1="1000"
-          y1="420"
-          x2="760"
-          y2="570"
-          stroke="rgba(140, 115, 85, 0.22)"
-          strokeWidth="2"
-        />
-      </svg>
-
-      {/* Top Triangular V-Flap with website beige gradient */}
+      {/* Top Triangular V-Flap opening UPWARDS */}
       <div className={`${styles.topFlap} ${opening ? styles.topFlapOpen : ""}`}>
         <svg
           viewBox="0 0 1000 650"
@@ -85,12 +59,68 @@ export default function EnvelopeIntro({ weddingData, lang, onOpen }) {
           <span className={styles.verticalBar} />
           <span className={styles.initialBride}>S</span>
         </div>
+
+        {/* Botanical Wax Seal Closure */}
+        <div className={styles.sealWrapper}>
+          {/* Golden Ambient Pulsing Halo */}
+          <div className={styles.sealGlow} aria-hidden="true" />
+
+          {/* Botanical Wax Seal Stamp */}
+          <picture className={styles.sealPicture}>
+            <source srcSet="/images/botanical_wax_seal.webp" type="image/webp" />
+            <img
+              src="/images/botanical_wax_seal.png"
+              alt="Botanical wax seal"
+              className={styles.sealImage}
+              draggable="false"
+              loading="eager"
+            />
+          </picture>
+        </div>
       </div>
 
-      {/* Minimalist Date at bottom center matching reference image */}
-      <p className={styles.envelopeDate}>
-        {`${date.day}.${monthNum}.${date.year}`}
-      </p>
+      {/* Bottom Envelope Body opening DOWNWARDS */}
+      <div className={`${styles.bottomFlap} ${opening ? styles.bottomFlapOpen : ""}`}>
+        <svg
+          viewBox="0 0 1000 700"
+          preserveAspectRatio="none"
+          className={styles.bottomFlapSvg}
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <defs>
+            <linearGradient id="bottomFlapGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#F5EFE6" />
+              <stop offset="35%" stopColor="#ECE3D4" />
+              <stop offset="100%" stopColor="#DDD0BC" />
+            </linearGradient>
+          </defs>
+          {/* Solid full-width bottom envelope body eliminating any gaps */}
+          <rect width="1000" height="700" fill="url(#bottomFlapGrad)" />
+          {/* Subtle elegant crease lines of the envelope pocket */}
+          <line
+            x1="0"
+            y1="220"
+            x2="500"
+            y2="420"
+            stroke="rgba(140, 115, 85, 0.2)"
+            strokeWidth="2"
+          />
+          <line
+            x1="1000"
+            y1="220"
+            x2="500"
+            y2="420"
+            stroke="rgba(140, 115, 85, 0.2)"
+            strokeWidth="2"
+          />
+        </svg>
+
+        {/* Minimalist Date at bottom center matching reference image */}
+        <p className={styles.envelopeDate}>
+          {`${date.day}.${monthNum}.${date.year}`}
+        </p>
+      </div>
     </div>
   );
 }
