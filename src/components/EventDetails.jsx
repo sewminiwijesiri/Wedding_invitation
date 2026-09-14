@@ -42,8 +42,12 @@ export default function EventDetails({ weddingData, lang }) {
             <p className={styles.eventTime}>{isSi ? (evt.timeSi || evt.time) : evt.time}</p>
             <p className={styles.eventNote}>{evt.note[lang]}</p>
             {idx < events.length - 1 && (
-              <div className={styles.heartDivider}>
-                <Heart size={15} fill="#B69B7E" color="#B69B7E" strokeWidth={0} />
+              <div className={styles.coupleDivider}>
+                <img
+                  src="/images/kandyan_couple.png"
+                  alt="Kandyan Couple"
+                  className={styles.kandyanCoupleImg}
+                />
               </div>
             )}
           </motion.div>

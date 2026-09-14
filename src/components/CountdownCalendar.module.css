@@ -80,6 +80,15 @@
   transform: translateY(-2px);
 }
 
+.motionHeartDivider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -8px auto 22px;
+  color: var(--gold-primary, #B69B7E);
+  opacity: 0.85;
+}
+
 /* Countdown Clock */
 .countdownTitle {
   font-family: var(--font-sans);
@@ -183,11 +192,11 @@
 
 .calendarDayCell {
   width: 14.28%;
-  height: 38px;
+  height: 42px;
   text-align: center;
   vertical-align: middle;
   font-family: var(--font-sans);
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   color: var(--text-charcoal);
 }
 
@@ -199,8 +208,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   position: relative;
   font-weight: 700;
   color: var(--text-black);
@@ -208,14 +217,14 @@
 
 .heartRing {
   position: absolute;
-  inset: -4px;
+  inset: -9px;
   color: var(--gold-primary);
   animation: heartThrob 2.4s infinite ease-in-out;
 }
 
 @keyframes heartThrob {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.15); }
+  50% { transform: scale(1.12); }
 }
 
 .calendarActions {

@@ -58,13 +58,19 @@
   margin: 0 auto;
 }
 
-.heartDivider {
+.coupleDivider {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px auto 14px;
-  color: #B69B7E;
-  opacity: 0.9;
+  margin: 24px auto 20px;
+}
+
+.kandyanCoupleImg {
+  width: 165px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(182, 155, 126, 0.25));
 }
 
 .venueDivider {
@@ -75,7 +81,7 @@
 }
 
 .hotelImageWrapper {
-  max-width: 360px;
+  max-width: 420px;
   width: 100%;
   margin: 24px auto 28px;
   border-radius: 16px;

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import styles from "./CountdownCalendar.module.css";
-import { Calendar } from "lucide-react";
+import { Calendar, Heart } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function CountdownCalendar({ weddingData, lang }) {
@@ -124,6 +124,15 @@ export default function CountdownCalendar({ weddingData, lang }) {
             <div className={styles.wingLine} />
           </div>
         </div>
+      </motion.div>
+
+      {/* Motion Heart Divider */}
+      <motion.div 
+        className={styles.motionHeartDivider}
+        animate={{ scale: [1, 1.25, 1] }}
+        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+      >
+        <Heart size={18} fill="#B69B7E" color="#B69B7E" strokeWidth={0} />
       </motion.div>
 
       {/* Countdown Clock */}
