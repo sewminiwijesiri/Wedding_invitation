@@ -77,9 +77,9 @@ export default function WeddingPage() {
           borderTop: "1px solid rgba(182, 155, 126, 0.2)"
         }}>
           <div className="monogram-split" style={{ marginBottom: "14px" }}>
-            <span className="monogram-split-initial">Y</span>
-            <span className="monogram-split-bar" />
             <span className="monogram-split-initial">S</span>
+            <span className="monogram-split-bar" />
+            <span className="monogram-split-initial">Y</span>
           </div>
 
           <p style={{

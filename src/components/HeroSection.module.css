@@ -9,14 +9,16 @@
 .editorialPhotoCard {
   position: relative;
   width: 100%;
-  min-height: 660px;
-  height: 82vh;
-  max-height: 750px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
+  max-height: none;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  padding: 24px 18px 40px;
+  padding: 24px 18px 48px;
   background-size: cover;
   background-position: center 25%;
   background-repeat: no-repeat;
@@ -54,7 +56,7 @@
 /* Couple Names in Flowing Signature Script: "Yasas & Sanduni" */
 .coupleNames {
   font-family: var(--font-signature);
-  font-size: clamp(2.9rem, 7.8vw, 4.1rem);
+  font-size: clamp(3.1rem, 8.4vw, 4.5rem);
   font-weight: 400;
   line-height: 1.05;
   color: #FFFFFF;
@@ -108,46 +110,15 @@
     0 1px 3px rgba(0, 0, 0, 0.95);
 }
 
-/* Botanical Flourish */
-.flourishWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 0;
-  margin-bottom: 6px;
-}
-
-.botanicalFlourish {
-  width: 130px;
-  height: 22px;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.75));
-}
-
-/* Torn Paper Deckle Edge overlay at the bottom */
-.tornPaperEdge {
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  height: 38px;
-  pointer-events: none;
-  z-index: 4;
-  line-height: 0;
-}
-
-.tornPaperSvg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
 /* Responsive adjustments */
 @media (max-width: 480px) {
   .editorialPhotoCard {
-    min-height: 600px;
-    height: 78vh;
-    padding: 20px 14px 36px;
-    border-radius: 20px 20px 0 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: 100vh;
+    height: 100dvh;
+    padding: 20px 14px 44px;
+    border-radius: 0;
   }
 
   .weddingTagline {
@@ -170,14 +141,5 @@
     font-size: 1.3rem;
     letter-spacing: 3px;
     margin-bottom: 8px;
-  }
-
-  .botanicalFlourish {
-    width: 110px;
-    height: 19px;
-  }
-
-  .tornPaperEdge {
-    height: 32px;
   }
 }

@@ -76,7 +76,7 @@ export default function CountdownCalendar({ weddingData, lang }) {
   // Generate Google Calendar Link
   const getGoogleCalendarUrl = () => {
     const isSi = lang === "si";
-    const title = encodeURIComponent(`${weddingData.couple.groom} & ${weddingData.couple.bride} - ${isSi ? "අපගේ විවාහ මංගල්‍යය" : "Our Wedding"}`);
+    const title = encodeURIComponent(`${weddingData.couple.bride} & ${weddingData.couple.groom} - ${isSi ? "අපගේ විවාහ මංගල්‍යය" : "Our Wedding"}`);
     const details = encodeURIComponent(
       isSi
         ? `මංගල චාරිත්‍ර: ${weddingData.events[0].venueSi || weddingData.events[0].venue} (${weddingData.events[0].timeSi || weddingData.events[0].time})\nමංගල සාදය: ${weddingData.events[1].venueSi || weddingData.events[1].venue} (${weddingData.events[1].timeSi || weddingData.events[1].time})`

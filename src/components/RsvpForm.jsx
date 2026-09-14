@@ -135,8 +135,8 @@ export default function RsvpForm({ weddingData, lang, onRsvpSubmitted }) {
             <strong>{formData.name}</strong> ·{" "}
             {formData.attending === "yes"
               ? lang === "si"
-                ? `සහභාගී වේ (අමුත්තන් ${formData.guests} දෙනෙක්)`
-                : `Attending (${formData.guests} ${formData.guests === "1" ? "guest" : "guests"})`
+                ? "සහභාගී වේ"
+                : "Attending"
               : lang === "si"
                 ? "සහභාගී විය නොහැක"
                 : "Unable to attend"}
@@ -209,58 +209,7 @@ export default function RsvpForm({ weddingData, lang, onRsvpSubmitted }) {
             </div>
           </div>
 
-          {formData.attending === "yes" && (
-            <>
-              {/* Number of guests stepper */}
-              <div className={styles.inputGroup}>
-                <label className={styles.label}>
-                  {lang === "si" ? "සහභාගී වන සංඛ්‍යාව" : "Number of Guests"}
-                </label>
-                <div className={styles.counterBox}>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      const current = parseInt(formData.guests, 10) || 1;
-                      if (current > 1) {
-                        setFormData({ ...formData, guests: String(current - 1) });
-                      }
-                    }}
-                    className={styles.counterBtn}
-                    aria-label={lang === "si" ? "අඩු කරන්න" : "Decrease guests"}
-                    disabled={isSubmitting || parseInt(formData.guests, 10) <= 1}
-                  >
-                    <Minus size={16} strokeWidth={2.2} />
-                  </button>
 
-                  <div className={styles.counterDisplay}>
-                    <span className={styles.counterNumber}>{formData.guests}</span>
-                    <span className={styles.counterLabel}>
-                      {lang === "si"
-                        ? "දෙනෙක්"
-                        : parseInt(formData.guests, 10) === 1
-                        ? "Guest"
-                        : "Guests"}
-                    </span>
-                  </div>
-
-                  <button
-                    type="button"
-                    onClick={() => {
-                      const current = parseInt(formData.guests, 10) || 1;
-                      if (current < 20) {
-                        setFormData({ ...formData, guests: String(current + 1) });
-                      }
-                    }}
-                    className={styles.counterBtn}
-                    aria-label={lang === "si" ? "වැඩි කරන්න" : "Increase guests"}
-                    disabled={isSubmitting}
-                  >
-                    <Plus size={16} strokeWidth={2.2} />
-                  </button>
-                </div>
-              </div>
-            </>
-          )}
 
           {/* Wishes / Message */}
           <div className={styles.inputGroup}>

@@ -35,7 +35,7 @@ export default function EnvelopeIntro({ weddingData, lang, onOpen }) {
       {/* Top Triangular V-Flap opening UPWARDS */}
       <div className={`${styles.topFlap} ${opening ? styles.topFlapOpen : ""}`}>
         <svg
-          viewBox="0 0 1000 650"
+          viewBox="0 0 1000 600"
           preserveAspectRatio="none"
           className={styles.flapSvg}
           xmlns="http://www.w3.org/2000/svg"
@@ -43,25 +43,26 @@ export default function EnvelopeIntro({ weddingData, lang, onOpen }) {
         >
           <defs>
             <linearGradient id="flapGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#FAF5ED" />
-              <stop offset="55%" stopColor="#EFE7DA" />
-              <stop offset="100%" stopColor="#E2D6C3" />
+              <stop offset="0%" stopColor="#FAF6F0" />
+              <stop offset="65%" stopColor="#F4EFE6" />
+              <stop offset="100%" stopColor="#E9DFD0" />
             </linearGradient>
           </defs>
+          {/* Top flap extending down to cover side crease shapes completely */}
           <path
-            d="M 0 0 L 1000 0 L 1000 420 L 518 610 Q 500 626 482 610 L 0 420 Z"
+            d="M 0 0 L 1000 0 L 1000 480 L 518 590 Q 500 600 482 590 L 0 480 Z"
             fill="url(#flapGrad)"
           />
         </svg>
 
-        {/* Monogram Initials matching Image 2 in deep charcoal */}
+        {/* Monogram Initials S | Y */}
         <div className={styles.flapMonogram}>
-          <span className={styles.initialGroom}>Y</span>
-          <span className={styles.verticalBar} />
           <span className={styles.initialBride}>S</span>
+          <span className={styles.verticalBar} />
+          <span className={styles.initialGroom}>Y</span>
         </div>
 
-        {/* Botanical Wax Seal Closure */}
+        {/* Botanical Wax Seal Closure & Tap prompt matching reference image */}
         <div className={styles.sealWrapper}>
           {/* Golden Ambient Pulsing Halo */}
           <div className={styles.sealGlow} aria-hidden="true" />
@@ -83,7 +84,7 @@ export default function EnvelopeIntro({ weddingData, lang, onOpen }) {
       {/* Bottom Envelope Body opening DOWNWARDS */}
       <div className={`${styles.bottomFlap} ${opening ? styles.bottomFlapOpen : ""}`}>
         <svg
-          viewBox="0 0 1000 700"
+          viewBox="0 0 1000 500"
           preserveAspectRatio="none"
           className={styles.bottomFlapSvg}
           xmlns="http://www.w3.org/2000/svg"
@@ -91,30 +92,16 @@ export default function EnvelopeIntro({ weddingData, lang, onOpen }) {
         >
           <defs>
             <linearGradient id="bottomFlapGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#F5EFE6" />
-              <stop offset="35%" stopColor="#ECE3D4" />
-              <stop offset="100%" stopColor="#DDD0BC" />
+              <stop offset="0%" stopColor="#F4EFE6" />
+              <stop offset="45%" stopColor="#ECE3D4" />
+              <stop offset="100%" stopColor="#DCCEB8" />
             </linearGradient>
           </defs>
-          {/* Solid full-width bottom envelope body eliminating any gaps */}
-          <rect width="1000" height="700" fill="url(#bottomFlapGrad)" />
-          {/* Subtle elegant crease lines of the envelope pocket */}
-          <line
-            x1="0"
-            y1="220"
-            x2="500"
-            y2="420"
-            stroke="rgba(140, 115, 85, 0.2)"
-            strokeWidth="2"
-          />
-          <line
-            x1="1000"
-            y1="220"
-            x2="500"
-            y2="420"
-            stroke="rgba(140, 115, 85, 0.2)"
-            strokeWidth="2"
-          />
+          {/* Solid full-width bottom envelope body */}
+          <rect width="1000" height="500" fill="url(#bottomFlapGrad)" />
+          {/* Thin elegant diagonal crease lines matching reference image */}
+          <line x1="0" y1="10" x2="260" y2="180" stroke="rgba(160, 135, 105, 0.32)" strokeWidth="1.2" />
+          <line x1="1000" y1="10" x2="740" y2="180" stroke="rgba(160, 135, 105, 0.32)" strokeWidth="1.2" />
         </svg>
 
         {/* Minimalist Date at bottom center matching reference image */}
