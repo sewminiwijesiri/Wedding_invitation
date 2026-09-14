@@ -175,7 +175,7 @@ export default function AdminDashboardPage() {
 
               {passError && (
                 <div style={{ color: "#EF5350", fontSize: "0.8rem", marginBottom: "14px" }}>
-                  Incorrect password. Try default: <strong>{requiredPassword}</strong>
+                  Incorrect password. Please try again.
                 </div>
               )}
 
