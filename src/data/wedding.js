@@ -4,9 +4,9 @@ export const weddingData = {
     groom: "Yasas",
     brideSi: "සඳුනි",
     groomSi: "යසස්",
-    initials: "Y & S",
-    monogram: "Y&S",
-    hashtag: "#YasasAndSanduni2026",
+    initials: "S & Y",
+    monogram: "S&Y",
+    hashtag: "#SanduniAndYasas2026",
     quote: {
       en: "Two souls with but a single thought, two hearts that beat as one.",
       si: "එක් සිතුවිල්ලකින් බැඳුණු ආත්ම දෙකක්, එකට ගැහෙන හදවත් දෙකක්."
@@ -118,15 +118,15 @@ export const weddingData = {
       desc: { en: "Auspicious Poruwa rituals & sacred union of vows", si: "සුබ මුහුර්තයෙන් පෝරුවේ චාරිත්‍ර ආරම්භය" }
     },
     {
-      time: "10:45 AM",
-      timeSi: "පෙ.ව. 10:45",
+      time: "9:40 AM",
+      timeSi: "පෙ.ව. 9:40",
       icon: "dinner",
       title: { en: "Traditional Tea & Kiribath", si: "සාම්ප්‍රදායික තේ පැන් සංග්‍රහය" },
       desc: { en: "Kiribath, Sri Lankan traditional sweetmeats & tea", si: "කිරිබත් සහ සාම්ප්‍රදායික රසකැවිලි සංග්‍රහය" }
     },
     {
-      time: "11:30 AM",
-      timeSi: "පෙ.ව. 11:30",
+      time: "10:30 AM",
+      timeSi: "පෙ.ව. 10:30",
       icon: "dance",
       title: { en: "Grand Entrance & First Dance", si: "යුවලගේ ප්‍රවේශය හා පළමු නැටුම" },
       desc: { en: "Newlyweds entrance, celebration & opening toasts", si: "අභිනව යුවල පිළිගැනීම සහ ප්‍රීතිමත් සුබපැතුම්" }
@@ -183,14 +183,14 @@ export const weddingData = {
     },
     bankDetails: {
       bank: "Commercial Bank / Bank of Ceylon",
-      holder: "Yasas & Sanduni",
+      holder: "Sanduni & Yasas",
       clabe: "012 180 0154897214 90",
       account: "6550 4932 8109",
-      concept: "Wedding Y&S"
+      concept: "Wedding S&Y"
     },
     digitalWallet: {
       type: "Online Transfer / Digital Gift",
-      handle: "yasas.sanduni.wedding@gmail.com"
+      handle: "sanduni.yasas.wedding@gmail.com"
     }
   },
   recommendations: [
@@ -214,7 +214,7 @@ export const weddingData = {
   gallery: [
     {
       src: "/images/couple_hero.jpg",
-      caption: { en: "Yasas & Sanduni", si: "යසස් සහ සඳුනි" },
+      caption: { en: "Sanduni & Yasas", si: "සඳුනි සහ යසස්" },
       tag: "Pre-shoot"
     },
     {
